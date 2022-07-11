@@ -1,0 +1,140 @@
+{% extends ":front:Front.html.twig" %}
+{% block title %}Compte Client{% endblock  %}
+{% block body %}
+
+    <section class="wrapper">
+        <div class="container">
+
+            <div class="row animate-group">
+                <div class="col-md-offset-2 col-md-8 col-sm-12">
+                    <div class="icon-box animate" data-animation-options="{&quot;animation&quot;:&quot;flipInY&quot;, &quot;duration&quot;:&quot;600&quot;}" style="opacity: 1; animation-fill-mode: both; animation-duration: 1.2s; animation-delay: 0s; animation-name: flipInY;">
+                        <i class="icon-box-icon fa fa-pencil"></i>
+                        <h3 class="icon-box-title">
+                            Créer un compte Client</h3>
+                        <div class="icon-box-content">
+                            <p>
+                                {{form_start(form,{'attr':{'id':'form2','role':'form'}})}}
+
+                                <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="errorHandler alert alert-danger no-display">
+                                        <i class="fa fa-times-sign"></i>Vous avez des erreurs , S'il vous plaît vérifier ci-dessous
+                                    </div>
+                                    <div class="successHandler alert alert-success no-display">
+                                        <i class="fa fa-ok"></i> Votre validation de formulaire est réussie!
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"> 
+                                    {{ form_row(form.NomEtPrenom, { 'label': 'Nom Et Prénom' ,'attr':{'placeholder':'Donnez votre nom  et prénom'}}) }}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ form_row(form.email,{'attr':{'placeholder':'Donnez votre adresse email '}})}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ form_row(form.username,{'attr':{'placeholder':'Donnez un  nom utlisateur'}})}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+
+                                  <div class="hidden">
+                 {{ form_row(form.image) }}
+               
+            </div>
+
+
+
+                            </div>
+
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ form_label(form.DateNaissance)}}
+                                    <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy" >
+                                        <span class="add-on">
+                                            <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="icon-calendar">
+                                            </i>
+                                        </span>
+
+                                        {{ form_widget(form.DateNaissance) }}
+
+
+                                        <span class="add-on">
+
+                                            <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="icon-calendar">
+                                            </i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ form_row(form.Genre) }}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ form_row(form.Telephone,{'attr':{'placeholder':'Donnez votre téléphone '}}) }}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ form_row(form.SiteWeb,{'attr':{'placeholder':'Donner votre site web'}}) }}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ form_row(form.Localite) }}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ form_row(form.plainPassword.first) }}
+                                    <style>
+                                        .required:after { content:" *";
+                                                          color:red; }
+                                        </style>
+                                    </div>
+                                </div>
+                                    <div class="row">
+                                <div class="col-md-12">
+                                    {{ form_row(form.plainPassword.second) }}
+                                </div>
+                                    </div>
+                             <div class="row">
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-bricky btn-lg" value="{{ 'registration.submit'|trans }}" >Enregistrer</button> <font color="red"> champ obligatoire* </font>
+                                </div></div>
+                            {{ form_end(form) }}
+
+                        </div>
+
+
+                    </div>
+                
+                    
+
+                   
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+{%endblock%}

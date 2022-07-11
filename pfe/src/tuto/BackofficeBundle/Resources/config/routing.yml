@@ -1,0 +1,199 @@
+
+tuto_backoffice_homepage:
+    path:   /
+    defaults: { _controller: tutoBackofficeBundle:Default:index }
+tuto_dashbroad:
+    path:   /dashbroad
+    defaults: { _controller: tutoBackofficeBundle:Dashbroad:dashbroad}
+tuto_contact:
+    path:   /contact
+    defaults: { _controller: tutoBackofficeBundle:Contact:contact }
+tuto_serviceuser:
+    path: /serviceuser
+    defaults: {_controller: tutoBackofficeBundle:ServiceUtilisateur:affiche }  
+tuto_maps:
+    path: /maps
+    defaults: {_controller: tutoBackofficeBundle:Maps:maps }
+tuto_etat_ajout:
+    path:   /etat/ajout
+    defaults: { _controller: tutoBackofficeBundle:Etat:ajout }
+tuto_TypeAbonnement_ajout:
+    path:   /typeAbonnement/ajout
+    defaults: { _controller: tutoBackofficeBundle:TypeAbonnement:ajout }
+
+tuto_ValeursDefault_ajout:
+    path:   /valeursDefault/ajout
+    defaults: { _controller: tutoBackofficeBundle:ValeursDefault:ajout }
+ 
+tuto_categorie_ajout:
+    path:   /categorie/ajout
+    defaults: { _controller: tutoBackofficeBundle:Categorie:ajout }
+    
+tuto_delegation_ajout:
+    path:   /delegation/ajout
+    defaults: { _controller: tutoBackofficeBundle:Delegation:ajout }
+    
+tuto_gouvernorat_ajout:
+    path:   /gouvernorat/ajout
+    defaults: { _controller: tutoBackofficeBundle:Gouvernorat:ajout }
+tuto_questionservices_ajout:
+    path:   /questionservices/ajout
+    defaults: { _controller: tutoBackofficeBundle:QuestionService:ajout }
+    
+tuto_localite_ajout:
+    path:   /localite/ajout
+    defaults: { _controller: tutoBackofficeBundle:Localite:ajout }
+    
+tuto_question_ajout:
+    path:   /question/ajout
+    defaults: { _controller: tutoBackofficeBundle:Question:ajout }
+    
+tuto_service_ajout:
+    path:   /service/ajout
+    defaults: { _controller: tutoBackofficeBundle:Service:ajout }
+    
+tuto_user_ajout:
+    path:   /register
+    defaults: { _controller: tutoBackofficeBundle:User:ajout }
+    
+tuto_categorie:
+    path:   /categorie
+    defaults: { _controller: tutoBackofficeBundle:Categorie:affiche }
+tuto_ValeursDefault:
+    path:   /valeursDefault
+    defaults: { _controller: tutoBackofficeBundle:ValeursDefault:affiche }
+        
+tuto_etat:
+    path:   /etat
+    defaults: { _controller: tutoBackofficeBundle:Etat:affiche }
+tuto_TypeAbonnement:
+    path:   /typeAbonnement
+    defaults: { _controller: tutoBackofficeBundle:TypeAbonnement:affiche }
+
+tuto_demande:
+    path:   /demande
+    defaults: { _controller: tutoBackofficeBundle:Demande:affiche }
+tuto_demandereponse:
+    path:   /demandereponse/{id}
+    defaults: { _controller: tutoBackofficeBundle:DemandeReponse:affiche }
+tuto_membership:
+    path:   /membership
+    defaults: { _controller: tutoBackofficeBundle:Membership:affiche }
+tuto_questionservices:
+    path:   /questionservices
+    defaults: { _controller: tutoBackofficeBundle:QuestionService:affiche }
+tuto_proposition:
+    path:   /proposition
+    defaults: { _controller: tutoBackofficeBundle:Proposition:affiche }
+tuto_notification:
+    path:   /notification
+    defaults: { _controller: tutoBackofficeBundle:Notification:affiche }
+tuto_delegation:
+    path:   /delegation
+    defaults: { _controller: tutoBackofficeBundle:Delegation:affiche }
+tuto_gouvernorat:
+    path:   /gouvernorat
+    defaults: { _controller: tutoBackofficeBundle:Gouvernorat:affiche }
+tuto_localite:
+    path:   /localite
+    defaults: { _controller: tutoBackofficeBundle:Localite:affiche }
+tuto_question:
+    path:   /question
+    defaults: { _controller: tutoBackofficeBundle:Question:affiche }
+tuto_service:
+    path:   /service
+    defaults: { _controller: tutoBackofficeBundle:Service:affiche }
+tuto_user:
+    path:   /register/affiche
+    defaults: { _controller: tutoBackofficeBundle:User:affiche }
+
+tuto_gouvernorat_modif:
+    path:   /gouvernorat/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:Gouvernorat:modifier }
+tuto_questionservices_modif:
+    path:   /questionservices/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:QuestionService:modifier }
+tuto_ValeursDefault_modif:
+    path:   /valeursDefault/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:ValeursDefault:modifier }
+tuto_user_modif:
+    path:   /register/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:User:modifier }
+tuto_question_modif:
+    path:   /question/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:Question:modifier }
+
+tuto_delegation_modif:
+    path:   /delegation/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:Delegation:modifier }
+tuto_localite_modif:
+    path:   /localite/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:Localite:modifier }
+tuto_service_modif:
+    path:   /service/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:Service:modifier }
+tuto_service_questionnaire:
+    path:   /questionnaire/{id}
+    defaults: { _controller: tutoBackofficeBundle:Questionnaire:questionnaire }
+tuto_categorie_modif:
+    path:   /categorie/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:Categorie:modifier }
+tuto_etat_modif:
+    path:   /etat/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:Etat:modifier }
+    
+tuto_TypeAbonnement_modif:
+    path:   /typeAbonnement/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:TypeAbonnement:modifier }
+
+tuto_gouvernorat_supp:
+    path:   /gouvernorat/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:Gouvernorat:supprimer }
+tuto_questionservices_supp:
+    path:   /questionservices/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:QuestionService:supprimer }
+tuto_user_supp:
+    path:   /register/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:User:supprimer}
+tuto_ValeursDefault_supp:
+    path:   /valeursDefault/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:ValeursDefault:supprimer }
+tuto_question_supp:
+    path:   /question/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:Question:supprimer }
+
+tuto_delegation_supp:
+    path:   /delegation/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:Delegation:supprimer }
+tuto_localite_supp:
+    path:   /localite/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:Localite:supprimer }
+tuto_service_supp:
+    path:   /service/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:Service:supprimer }
+tuto_categorie_supp:
+    path:   /categorie/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:Categorie:supprimer }
+tuto_etat_supp:
+    path:   /etat/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:Etat:supprimer } 
+tuto_TypeAbonnement_supp:
+    path:   /typeAbonnement/supp/{id}
+    defaults: { _controller: tutoBackofficeBundle:TypeAbonnement:supprimer }
+tuto_demande_modif:
+    path:   /demande/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:Demande:modifier }
+tuto_proposition_modif:
+    path:   /proposition/modif/{id}
+    defaults: { _controller: tutoBackofficeBundle:Proposition:modifier }
+tuto_lock:
+    path:   /lock
+    defaults: { _controller: tutoBackofficeBundle:lock:lock}
+
+tuto_calendrier:
+    path:   /calendrier
+    defaults: { _controller: tutoBackofficeBundle:Calendrier:calendrier}
+
+tuto_sendmail:
+    path:     /envoie
+    defaults: { _controller: tutoBackofficeBundle:Default:sendmail }    

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp/www/pfe/src/tuto/FrontofficeBundle/Controller/NotificationController.php</file>
+            <file>file:/C:/wamp/www/pfe/app/Resources/views/back/base.html.twig</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Controller/QuestionController.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Entity/Demande.php</file>
+            <file>file:/C:/wamp/www/pfe/app/Resources/views/front/Front.html.twig</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Resources/views/Dashbroad/dashbroad.html.twig</file>
+            <file>file:/C:/wamp/www/pfe/web/uploads/users/12472400_1559896044332785_7223823768768090435_n.jpg</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Resources/views/Dashbroad/script.html.twig</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/FrontofficeBundle/Resources/views/Default/index.html.twig</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Entity/DemandeReponse.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Entity/Categorie.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/FrontofficeBundle/Controller/Categorie1Controller.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/FrontofficeBundle/Controller/QuestionnaireController.php</file>
+            <file>file:/C:/wamp/www/pfe/web/uploads/users/IMG_20160430_172840.jpg</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/FrontofficeBundle/Controller/ServiceUserController.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/FrontofficeBundle/Resources/views/Categorie/affiche.html.twig</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Controller/QuestionnaireController.php</file>
+            <file>file:/C:/wamp/www/pfe/app/Resources/FOSUserBundle/views/ChangePassword/changePassword_content.html.twig</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/FrontofficeBundle/Controller/PropositionController.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Controller/DemandeController.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Repository/DemandeRepository.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Controller/ServiceController.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Controller/QuestionServiceController.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Controller/CategorieController.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Entity/Question.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Form/QuestionType.php</file>
+            <file>file:/C:/wamp/www/pfe/src/tuto/BackofficeBundle/Controller/DashbroadController.php</file>
+        </group>
+    </open-files>
+</project-private>

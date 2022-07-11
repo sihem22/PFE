@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.4 Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+    <!--<![endif]-->
+    <!-- start: HEAD -->
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <!-- start: META -->
+        <meta charset="utf-8" />
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- end: META -->
+        <!-- start: MAIN CSS -->
+        <link rel="stylesheet" href="{{ asset('back/plugins/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/font-awesome/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/fonts/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/css/main-responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/iCheck/skins/all.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/perfect-scrollbar/src/perfect-scrollbar.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/css/theme_light.css') }}" type="text/css" id="skin_color">
+        <link rel="stylesheet" href="{{ asset('back/css/print.css') }}" type="text/css" media="print"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('back/plugins/select2/select2.css') }}" />
+        <link rel="stylesheet" href="{{ asset('back/plugins/DataTables/media/css/DT_bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('back/plugins/ladda-bootstrap/dist/ladda-themeless.min.css') }}">
+        <link rel="stylesheet" href="{{asset('back/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/bootstrap-datetimepicker/css/datetimepicker.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/iCheck/skins/square/red.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/font-awesome-animation-master/dist/font-awesome-animation.min.css') }}">
+
+        <link rel="stylesheet" href="{{ asset('back/plugins/iCheck/skins/square/red.css') }}">
+       
+       
+         
+
+
+        <!--[if IE 7]-->
+        <link rel="stylesheet" href="{{ asset('back/plugins/font-awesome/css/font-awesome-ie7.min.css') }}">
+        <![endif]-->
+        <!-- end: MAIN CSS -->
+        <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+        <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="{{ asset('back/job.css') }}" media="all" />
+    </head>
+    <!-- end: HEAD -->
+    <!-- start: BODY -->
+    <body>
+        <!-- start: HEADER -->
+        {% include ':back:nav.html.twig' %}
+        
+        <!-- end: HEADER -->
+        <!-- start: MAIN CONTAINER -->
+        <div class="main-container">
+            <div class="navbar-content">
+              
+                <!-- start: SIDEBAR -->
+                <div class="main-navigation navbar-collapse collapse">
+                     
+                    <!-- start: MAIN MENU TOGGLER BUTTON -->
+                    <div class="navigation-toggler">
+                        <i class="clip-chevron-left"></i>
+                        <i class="clip-chevron-right"></i>
+                    </div>
+                    
+                    <!-- end: MAIN MENU TOGGLER BUTTON -->
+                    <!-- start: MAIN NAVIGATION MENU -->
+                    <ul class="main-navigation-menu">
+                        <li>
+                             <a href="{{ path('tuto_dashbroad') }}"><i class="fa fa-dashboard faa-vertical animated"></i>
+                                <span class="title"> Dashbroad </span><span class="selected"></span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0)"><i class="fa fa-spinner fa-spin"></i>
+                                <span class="title"> Categorie </span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{{path('tuto_categorie')}}"><i class="clip-list-6"></i>
+
+                                        <span class="title"> Liste Categories </span>
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{path('tuto_categorie_ajout')}}">
+                                        <i class="clip-plus-circle-2"></i>
+
+                                        <span class="title"> Ajouter Categorie </span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" ><i class="fa fa-wrench faa-wrench animated"></i>
+                                <span class="title">Parametrage </span><i class="icon-arrow"></i><span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="javascript:void(0)" ><i class="fa fa-globe  fa-spin"></i>
+                                        <span class="title"> Localité </span><i class="icon-arrow"></i><span class="selected"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="{{path('tuto_localite')}}">
+                                               <i class="clip-list-6"></i>
+                                                <span class="title"> Liste Localites </span>
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{path('tuto_localite_ajout')}}">
+                                                <i class="clip-plus-circle-2"></i> 
+
+                                                <span class="title"> Ajouter Localite </span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="fa fa-globe  fa-spin"></i>
+                                        <span class="title"> Gouvernorat </span><i class="icon-arrow"></i>
+                                        <span class="selected"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="{{path('tuto_gouvernorat')}}">
+                                                <i class="clip-list-6"></i> 
+
+                                                <span class="title"> Liste Gouvernorats </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{path('tuto_gouvernorat_ajout')}}">
+                                                <i class="clip-plus-circle-2"></i> 
+                                                <span class="title"> Ajouter Gouvernorat </span>
+                                            </a>
+                                        </li>
+
+
+
+
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="fa fa-globe  fa-spin"></i>
+                                        <span class="title"> Delegation</span><i class="icon-arrow"></i>
+                                        <span class="selected"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="{{path('tuto_delegation')}}">
+                                               <i class="clip-list-6"></i> 
+                                                <span class="title">Liste Delegations</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{path('tuto_delegation_ajout')}}">
+                                                <i class="clip-plus-circle-2"></i> 
+                                                <span class="title">Ajouter Delegation</span>
+                                            </a>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><i class="fa fa-thumbs-o-up faa-bounce animated"></i>
+
+                                        <span class="title">Etat</span><i class="icon-arrow"></i>
+                                        <span class="selected"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="{{path('tuto_etat')}}">
+                                                <i class="clip-list-6"></i> 
+                                                <span class="title">Liste Etats</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{path('tuto_etat_ajout')}}">
+                                               <i class="clip-plus-circle-2"></i>
+                                                <span class="title">Ajouter Etat</span>
+
+                                            </a>
+                                        </li>								
+
+
+                                    </ul>
+                                </li>
+
+
+                                
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+
+                                <i class="fa fa-question fa-spin"></i>
+                                <span class="title"> Question </span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{{path('tuto_question')}}">
+                                       <i class="clip-list-6"></i>
+                                        <span class="title">Liste  Questions</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{path('tuto_question_ajout')}}">
+                                        <i class="clip-plus-circle-2"></i>
+                                        <span class="title">Ajouter Question</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><i class="fa fa-cog fa-spin"></i>
+                                <span class="title"> valeurs_Defauts </span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{{path('tuto_ValeursDefault')}}">
+                                         <i class="clip-list-6"></i>
+                                        <span class="title">Liste Valeurs_Defauts</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{path('tuto_ValeursDefault_ajout')}}">
+                                        <i class="clip-plus-circle-2"></i> 
+                                        <span class="title">Ajouter Valeurs_Defauts</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><i class="fa fa-magic faa-vertical animated"></i>
+                                <span class="title">Service</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{{path('tuto_service')}}">
+                                        <i class="clip-list-6"></i>
+                                        <span class="title">Liste Services</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{path('tuto_service_ajout')}}">
+                                        <i class="clip-plus-circle-2"></i> 
+                                        <span class="title">Ajouter Service</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><i class="fa fa-play faa-horizontal animated"></i>
+                                <span class="title">QuestionService</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{{path('tuto_questionservices')}}">
+                                        <i class="clip-list-6"></i>
+                                        <span class="title">Liste QuestionServices</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{path('tuto_questionservices_ajout')}}">
+                                       <i class="clip-plus-circle-2"></i>
+                                        <span class="title">Ajouter QuestionService</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="javascript:void(0)"><i class="fa fa-male faa-vertical animated"></i>
+                                <span class="title">Utilisateur</span><i class="icon-arrow"></i>
+                                <span class="selected"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{{path('tuto_user')}}">
+                                        <i class="clip-list-6"></i>
+                                        <span class="title">Liste Utilisateurs</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{path('tuto_user_ajout')}}"> <i class="clip-plus-circle-2"></i>
+                                        <span class="title">Ajouter Administrateur</span>
+
+                                    </a>
+                                </li>								
+
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0)" class="active">
+                                <i class="clip-notification-2 faa-horizontal animated"></i>
+
+                                <span class="title"> Notification</span>
+                                <i class="icon-arrow"></i>
+                            </a>
+                            <ul class="sub-menu">
+
+                                <li>
+                                    <a href="{{path('tuto_notification')}}">
+                                        <i class="clip-list-6"></i>
+                                        <span class="title">Liste Notifications</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="fa fa-comments faa-vertical animated"></i>
+                                <span class="title"> Propositions </span><i class="icon-arrow"></i>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+
+                                <li>
+                                    <a href="{{path('tuto_proposition')}}">
+                                        <i class="clip-list-6"></i>
+                                        <span class="title">Liste Propositions</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        
+
+
+
+
+                        <li>
+                            <a href="javascript:void(0)">
+                               <i class="clip-bubble-dots faa-vertical animated"></i>
+                                <span class="title"> Demandes</span><i class="icon-arrow"></i>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+
+                                <li>
+                                    <a href="{{path('tuto_demande')}}">
+                                       <i class="clip-list-6"></i>
+                                        <span class="title">Liste Demandes</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a href="javascript:void(0)">
+                               <i class="fa fa-phone faa-horizontal animated"></i>
+                                <span class="title"> Contactez-nous </span><i class="icon-arrow"></i>
+                                <span class="arrow "></span>
+                            </a>
+                            <ul class="sub-menu">
+
+                                <li>
+                                    <a href="{{path('tuto_contact')}}">
+                                       <i class="clip-list-6"></i>
+                                        <span class="title">Liste Contactes</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                          
+                        <li>
+                            <a href="{{path('tuto_maps')}}"><i class="clip-globe  fa-spin"></i>
+                                <span class="title">Maps</span>
+                                <span class="selected"></span>
+                            </a>
+                        </li>
+                      
+                    </ul>
+                    <!-- end: MAIN NAVIGATION MENU -->
+                </div>
+                <!-- end: SIDEBAR -->
+            </div>
+            <!-- start: PAGE -->
+            <div class="main-content">
+
+            {% block body %}{% endblock %}
+
+        </div>
+        <!-- end: PAGE -->
+    </div>
+
+    <!-- end: MAIN CONTAINER -->
+    <!-- start: FOOTER -->
+    {% include ':back:footer.html.twig' %}
+    <!-- end: FOOTER -->
+    <!-- start: RIGHT SIDEBAR -->
+ 
+    <!-- end: RIGHT SIDEBAR -->
+    <!-- start: MAIN JAVASCRIPTS -->
+    <!--[if lt IE 9]>
+    <script src="{{ asset('back/plugins/respond.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/excanvas.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('back/plugins/jQuery-lib/1.10.2/jquery.min.js') }}"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="{{ asset('back/plugins/jQuery-lib/2.0.3/jquery.min.js') }}"></script>
+    <!--<![endif]-->
+    <script src="{{ asset('back/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/blockUI/jquery.blockUI.js') }}"></script>
+    <script src="{{ asset('back/plugins/iCheck/jquery.icheck.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/perfect-scrollbar/src/jquery.mousewheel.js') }}"></script>
+    <script src="{{ asset('back/plugins/perfect-scrollbar/src/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('back/plugins/less/less-1.5.0.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/jquery-cookie/jquery.cookie.js') }}"></script>
+    <script src="{{ asset('back/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js') }}"></script>
+    <script src="{{ asset('back/js/main.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('back/plugins/bootbox/bootbox.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('back/plugins/jquery-mockjax/jquery.mockjax.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('back/plugins/select2/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('back/plugins/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('back/plugins/DataTables/media/js/DT_bootstrap.js') }}"></script>
+    <script src="{{ asset('back/js/table-data.js') }}"></script>
+    <script src="{{ asset('back/plugins/ladda-bootstrap/dist/spin.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/ladda-bootstrap/dist/ladda.min.js') }}"></script>
+    <script src="{{ asset('back/js/ui-buttons.js') }}"></script>
+    <script src="{{ asset('back/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('back/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('back/js/locales/bootstrap-datetimepicker.pt-BR.js') }}"></script>            
+    <script src="{{ asset('back/plugins/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/summernote/build/summernote.min.js') }}"></script>
+    <script src="{{ asset('back/plugins/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('back/plugins/ckeditor/adapters/jquery.js') }}"></script>
+    <script src="{{ asset('back/js/form-validation.js') }}"></script>
+    <script src="{{ asset('back/plugins/iCheck/jquery.icheck.js') }}"></script>
+
+
+      
+
+     
+       
+        <script src="{{ asset('back/plugins/jQuery-Knob/js/jquery.knob.js') }}"></script> 
+
+<script src="{{ asset('back/plugins/Hightcharts/js/highcharts.js') }}"></script> 
+<script src="{{ asset('back/plugins/Hightcharts/js/modules/exporting.js') }}"></script>
+<script src="{{ asset('back/plugins/Hightcharts/js/highcharts-3d.js') }}"></script> 
+
+        
+
+<script>
+
+  $(function () {
+    $('#container1').highcharts({
+        chart: {
+            type: 'column',
+            options3d: {
+                enabled: true,
+                alpha: 7,
+                beta: 23,
+                depth: 50
+            }
+        },
+        title: {
+            text: 'Nombre de demandes par catégories'
+        },
+        subtitle: {
+           
+        },
+        plotOptions: {
+            column: {
+                depth: 25
+            }
+        },
+        xAxis: {
+            categories: ['Education','Evénement','Maison Et Jardin','Beauté Et Santé','Livraison','Travaux Informatique','Mission Et Affaire'] 
+        },
+        yAxis: {
+            title: {
+                text: null
+            }
+        },
+        series: [{
+            name: 'Demandes',
+            data: [{{ render (controller('tutoBackofficeBundle:Dashbroad:script')) }}]
+                }]
+       });
+});
+</script>
+
+<script>
+
+  $(function () {
+    $('#container2').highcharts({
+        chart: {
+            type: 'column',
+            options3d: {
+                enabled: true,
+                alpha: 7,
+                beta: 23,
+                depth: 50
+            }
+        },
+        title: {
+            text: 'Nombre de propositions par catégorie'
+        },
+        subtitle: {
+           
+        },
+        plotOptions: {
+            column: {
+                depth: 25
+            }
+        },
+        xAxis: {
+            categories: ['Education','Evénement','Maison Et Jardin','Beauté Et Santé','Livraison','Travaux Informatique','Mission Et Affaire'] 
+        },
+        yAxis: {
+            title: {
+                text: null
+            }
+        },
+        series: [{
+            name: 'Propositions',
+            data: [{{ render (controller('tutoBackofficeBundle:Dashbroad:scriptprop')) }}]
+                }]
+       });
+});
+</script>
+
+<script>
+$(function () {
+    $('#container3').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: 'Nombre de clients, professionnels, administrateurs'
+        },
+        tooltip: {
+          
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Browser share',
+            data: [
+                ['Clients',{{ render (controller('tutoBackofficeBundle:Dashbroad:getNbclient')) }}],
+                ['Professionnels',{{ render (controller('tutoBackofficeBundle:Dashbroad:getNbprof')) }}],
+                 ['Administrateurs',{{ render (controller('tutoBackofficeBundle:Dashbroad:getNbadmin')) }}]
+               
+            ]
+        }]
+    });
+});
+</script>
+
+
+
+    <script>
+
+        jQuery(document).ready(function () {
+            Main.init();
+            TableData.init();
+            UIButtons.init();
+            FormValidator.init();
+            
+            
+
+
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker').datetimepicker({
+                format: 'dd-mm-yyyy',
+                minView: 'month',
+                autoclose: true
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-aero',
+                radioClass: 'iradio_square-aero',
+                increaseArea: '20%' // optional
+            });
+        });
+    </script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+var tunisie = new google.maps.LatLng (36.862499, 10.195556);
+ 
+var myOptions = {
+    zoom:7,
+    center: tunisie,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+
+map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+var marker = new google.maps.Marker({
+        position: tunisie,
+        map: map,
+        title:"Hello World!" });
+
+
+</script>
+<script>
+$("#hide1").click(function(){
+    $(".badge").hide();
+});
+</script>
+
+<script>
+$("#hide2").click(function(){
+    $(".badge").hide();
+});
+</script>
+
+
+
+
+</body>
+<!-- end: BODY -->
+</html>

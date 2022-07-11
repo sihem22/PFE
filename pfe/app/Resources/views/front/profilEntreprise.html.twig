@@ -1,0 +1,66 @@
+<ul class="nav nav-pills">
+            <li class="filter">
+                <a href="#">
+                    Acceuil</a>
+            </li>
+            <li class="filter">
+                <a href="{{  path('fos_user_profile_show') }}">
+                    Profil</a>
+            </li>
+            <li class="filter" >
+                <a href="{{  path('serviceuser_affiche') }}">
+                    Compétences</a>
+            </li>
+            <li class="filter">
+                <a href="{{  path('categories_profil') }}">
+                    Publier une Demande</a>
+            </li>
+             <li class="filter">
+                <a href="{{  path('notification_affiche1') }}">
+                    Envoyer une Proposition</a>
+            </li>
+           
+               
+            
+        </ul><hr>
+        <div class="row">
+            <div class="col-md-4">
+                {{ render (controller('FrontofficeBundle:Client:affiche')) }} 
+                <div class="panel-group accordion-custom accordion-teal" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" href="{{  path('EspaceEntreprise') }}">
+                                    <i class="icon-arrow"></i>
+                                    Information sur le compte
+                                </a></h4>
+                        </div>
+                        
+                    </div>
+                     
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" href="{{  path('notification_affiche1') }}">
+                                    <i class="icon-arrow"></i>
+                                    Demandes Reçues
+                                </a></h4>
+                        </div>
+                        
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" href="{{  path('fos_user_change_password') }}" >
+                                    <i class="icon-arrow"></i>
+                                    Changer votre Mot De Passe
+                                </a></h4>
+                        </div>
+                        
+                    </div>
+                
+                   
+                    
+                        
+                </div>   
+                    </div>

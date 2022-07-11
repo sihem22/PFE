@@ -1,0 +1,104 @@
+{% extends ":back:base.html.twig" %}
+{% block title %} Demande {% endblock  %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+           <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="clip-home-2"></i>
+                         <a href="{{path('frontoffice_homepage')}}">
+                            Front Office
+                        </a>
+                    </li>
+                    <li class="active">
+                        <i><b>  Back Office </b> </i>
+                    </li>
+                    
+                </ol>
+            </div>
+        </div>
+        </div>
+                            <br>
+        {% for label, flashes in app.session.flashbag.all %}
+            {% for flash in flashes %}
+                <div class="alert alert-success">
+                    <button class="close" data-dismiss="alert">
+                        ×
+                    </button>
+                    <i class="fa fa-check-circle"></i>
+                    <strong>{{ label|title }} !!!</strong> :  {{ flash }}
+
+                </div>
+            {% endfor %}
+        {% endfor %}
+       
+        
+        
+        
+        <div class="row">
+            <div class="col-md-12">
+                <!-- start: DYNAMIC TABLE PANEL -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-external-link-square"></i>
+                        Liste des Demandes
+                        <div class="panel-tools">
+                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                            <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
+                            
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+                            <thead>
+                                <tr>
+                                     <th class="center">DateDemande</th>  
+                                     <th class="center"> User </th>
+                                    <th class="center"> Etat</th>
+                                    <th class="center"> Service</th>
+                                    <th class="center">Localite</th>
+                                     <th class="center">Action</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                              {% for demande in demandes %}
+                              <tr>
+    
+                              <td class="center">{{demande.dateDemande|date('d/m/Y')}}</td>
+                              
+                              <td class="center">{{demande.user}}</td>
+                               <td class="center">{% if demande.etat == "Validé" %}
+                               <button type="button" class="btn btn-success btn-xs"> {{demande.etat}} </button> {% endif %} 
+                              {% if demande.etat == "Rejeté" %}
+                               <button type="button" class="btn btn-danger btn-xs"> {{demande.etat}} </button> {% endif %} 
+                               {% if demande.etat == "En attente" %}
+                               <button type="button" class="btn btn-warning btn-xs"> {{demande.etat}} </button> {% endif %}
+                               {% if demande.etat == "Expiré" %}
+                               <button type="button" class="btn btn-beige btn-xs"> {{demande.etat}} </button> {% endif %} 
+                               {% if demande.etat == "Embauché" %}
+                               <button type="button" class="btn btn-info btn-xs"> {{demande.etat}} </button> {% endif %} 
+
+                               <td class="center"> {{demande.service}} </td>
+                               <td class="center"> {{demande.localite}} </td>
+                               <td td class="center">
+                               <a href="{{path('tuto_demandereponse',{'id':demande.id})}}" class="btn btn-xs btn-green tooltips"  data-original-title="affiche" data-placement="top"><i class="fa fa-eye"></i></a>
+                               {% if demande.etat == "En attente" %}
+                                <a href="{{path('tuto_demande_modif',{'id':demande.id})}}" class="btn btn-xs btn-teal tooltips"  data-original-title="Valider" data-placement="top">Valider</a></td>
+                               {%else%} {% if demande.etat == "Validé" %}
+                                   <button type="button" class="btn btn-xs btn-teal tooltips"> déja validé </button> {% endif %} {% endif %} 
+                                
+                              </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- end: DYNAMIC TABLE PANEL -->
+            </div>
+        </div>
+                                </div>
+        
+    {% endblock  %}

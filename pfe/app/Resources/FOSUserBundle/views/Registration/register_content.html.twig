@@ -1,0 +1,42 @@
+{% extends ":front:Front.html.twig" %}
+{% block title %} Compte Client {% endblock  %}
+{% block body %}
+
+
+<section class="wrapper">
+        <div class="container">
+{% trans_default_domain 'FOSUserBundle' %}
+            <div class="row animate-group">
+                <div class="col-sm-12">
+                    <div class="icon-box animate" data-animation-options="{&quot;animation&quot;:&quot;flipInY&quot;, &quot;duration&quot;:&quot;600&quot;}" style="opacity: 1; animation-fill-mode: both; animation-duration: 1.2s; animation-delay: 0s; animation-name: flipInY;">
+                        <i class="icon-box-icon fa fa-pencil"></i>
+                        <h3 align="left" class="icon-box-title">
+                           Créer un compte client :</h3>
+                        <div class="icon-box-content">
+                            <p>
+                         <div class="icon-box-content">
+                            <div class="col-sm-12">
+                                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                                {{ form_widget(form) }} <br>
+                                 <div class="row">
+                                <div class="col-sm-3">
+                                    <button type="submit" class="btn btn-bricky btn-lg" value="{{ 'registration.submit'|trans }}" >Enregistrer</button> <font color="red"> champ obligatoire* </font>
+                                </div></div>
+                                {{ form_end(form) }}
+                            </div>
+
+                        </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </section>
+{% endblock %}

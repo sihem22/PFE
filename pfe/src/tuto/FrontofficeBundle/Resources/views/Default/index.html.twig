@@ -1,0 +1,331 @@
+{% extends ":front:Front.html.twig" %}
+{% block body %}
+<div class="main-container">
+			<!-- start: STYLE SELECTOR BOX -->
+			
+			<!-- end: STYLE SELECTOR BOX -->
+			<!-- start: REVOLUTION SLIDERS -->
+			<section class="fullwidthbanner-container">
+				<div class="fullwidthabnner">
+					<ul>
+						<!-- start: teaching SLIDE -->
+						{{ render (controller('FrontofficeBundle:Categorie1:Affiche')) }}
+						<!-- end: teaching SLIDE -->
+
+                         
+                         <!-- start: event SLIDE -->
+						
+						<!-- end: event SLIDE -->
+
+                           
+
+                         <!-- start: house SLIDE -->
+						
+						<!-- end: house SLIDE -->  
+
+                             
+                            <!-- start: computer SLIDE -->
+						
+						<!-- end: driver SLIDE -->
+
+
+
+                             <!-- start: errands SLIDE -->
+						
+						<!-- end: errands SLIDE -->    
+
+						<!-- start: SECOND SLIDE -->
+						<!-- end: SECOND SLIDE -->
+						<!-- start: THIRD SLIDE -->
+						<!-- end: THIRD SLIDE -->
+					</ul>
+				</div>
+			</section>
+			<!-- end: REVOLUTION SLIDERS -->
+			<section>
+				<!-- start: CORE BOXES CONTAINER -->
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="core-box">
+								<div class="heading">
+                                                                    <i class="clip-user-3 circle-icon"></i> 
+                                                                    <h3><b> Voulez-vous embaucher <br> la bonne personne pour le bon prix? </b></h3>
+								</div>
+								<div class="content">
+                                                                    Postez une demande<br>
+								</div>
+								<a class="view-more" href="{{  path('front_categories') }}">
+									<br>Cliquez ici <i class="fa fa-angle-right"></i>
+								</a>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="core-box">
+								<div class="heading">
+									<i class="clip-user-5 circle-icon"></i>
+                                                                        <h3><b>Avez-vous besoin<br> d'un affaire?</b></h3>
+								</div>
+                                                            
+								<div class="content">
+                                                                    SmallJobsMall vous aide à obtenir facilement<br> de l'argent
+                                                                </div><br>
+								<a class="view-more" href="{{  path('front_signupprof') }}">
+									Cliquez ici <i class="fa fa-angle-right"></i>
+								</a>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="core-box">
+								<div class="heading">
+									<i class="fa fa-group circle-icon"></i>
+                                                                        <h3><b>Les entreprises et les travailleurs indépendants commencent les enchères ici !</b></h3>
+								</div>
+								<div class="content">
+									Vous voulez augmenter votre revenu ?
+								</div>
+								<a class="view-more" href="{{  path('fos_user_security_login') }}">
+									Cliquez ici  <i class="fa fa-angle-right"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end: CORE BOXES CONTAINER -->
+			</section>
+			<section class="wrapper wrapper-grey padding50">
+				<!-- start: WORKS CONTAINER -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="center">Pourquoi Small Jobs Mall</h3>
+							<hr>
+							<center>
+							<iframe width="420" height="315" src="https://www.youtube.com/embed/4jnIJ30aS2w" frameborder="0" allowfullscreen></iframe></center>
+						</div>
+					</div>
+				</div>
+				<!-- end: WORKS CONTAINER -->
+			</section>
+			<section class="wrapper padding50">
+				<!-- start: ABOUT US CONTAINER -->
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<h2 style="text-align: right;">Comment creer un compte professionnel?</h2>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/7B8ANhVyBpk" frameborder="0" allowfullscreen></iframe>
+							<hr class="fade-left">
+							
+						</div>
+						<div class="col-sm-6">
+							<ul class="icon-list animate-group">
+								<li>
+									<div class="timeline animate" data-animation-options='{"animation":"scaleToBottom", "duration":"300"}'></div>
+									<i class="clip-stack-empty circle-icon circle-teal animate" data-animation-options='{"animation":"flipInY", "duration":"600"}'></i>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/VsruztxUoNo" frameborder="0" allowfullscreen></iframe>
+							</ul>
+						
+					</div>
+				</div>
+				<!-- end: ABOUT US CONTAINER -->
+			</section>
+			<section class="wrapper wrapper-grey padding50">
+				<!-- start: PORTFOLIO CONTAINER -->
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="flexslider" data-plugin-options='{"controlNav":false,"sync": "#carousel"}'>
+								<ul class="slides">
+									<li>
+										<a class="group1" href="{{ asset('uploads/categories/2f3bb6fa20bec7ed94656a298504409a5440f0f5_1.JPEG') }}" title="Agrandir l'image">
+											<img src="{{ asset('uploads/categories/2f3bb6fa20bec7ed94656a298504409a5440f0f5_1.JPEG') }}" />
+											<span class="image-overlay"> <i class="clip-expand circle-icon circle-main-color"></i> </span>
+										</a>
+									</li>
+									<li>
+										<a class="group1" href="{{ asset('uploads/categories/579ad278c0d8d0ae040cd8ca78ae55b33046dc8b (1).JPEG') }}" title="Agrandir l'image">
+											<img src="{{ asset('uploads/categories/579ad278c0d8d0ae040cd8ca78ae55b33046dc8b (1).JPEG') }}" />
+											<span class="image-overlay"> <i class="clip-expand circle-icon circle-main-color"></i> </span>
+										</a>
+									</li>
+									<li>
+										<a class="group1" href="{{ asset('uploads/categories/9ab6656e8949997cba2aeaa6100148a9be59bdd8_1.JPEG') }}" title="Agrandir l'image">
+											<img src="{{ asset('uploads/categories/9ab6656e8949997cba2aeaa6100148a9be59bdd8_1.JPEG') }}" />
+											<span class="image-overlay"> <i class="clip-expand circle-icon circle-main-color"></i> </span>
+										</a>
+									</li>
+									
+									<li>
+										<a class="group1" href="{{ asset('uploads/categories/e1a7fd1538c73fa0fd1abe347e02bb7716aeb842 (1).JPEG') }}" title="Agrandir l'image">
+											<img src="{{ asset('uploads/categories/e1a7fd1538c73fa0fd1abe347e02bb7716aeb842 (1).JPEG') }}" />
+											<span class="image-overlay"> <i class="clip-expand circle-icon circle-main-color"></i> </span>
+										</a>
+									</li>
+									<li>
+										<a class="group1" href="{{ asset('uploads/categories/39bcd8da7470cded8c93ed096af97aeb707d43c5_1.JPEG') }}" title="Agrandir l'image">
+											<img src="{{ asset('uploads/categories/39bcd8da7470cded8c93ed096af97aeb707d43c5_1.JPEG') }}" />
+											<span class="image-overlay"> <i class="clip-expand circle-icon circle-main-color"></i> </span>
+										</a>
+									</li>
+                                                                        <li>
+										<a class="group1" href="{{ asset('uploads/categories/teaching.jpg') }}" title="Agrandir l'image">
+											<img src="{{ asset('uploads/categories/teaching.jpg') }}" />
+											<span class="image-overlay"> <i class="clip-expand circle-icon circle-main-color"></i> </span>
+										</a>
+									</li>
+                                                                        <li>
+										<a class="group1" href="{{ asset('uploads/categories/driver.jpg') }}" title="Agrandir l'image">
+											<img src="{{ asset('uploads/categories/driver.jpg') }}" />
+											<span class="image-overlay"> <i class="clip-expand circle-icon circle-main-color"></i> </span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div id="carousel" class="flexslider animate-group" data-plugin-options='{"itemWidth": 150, "itemMargin": 6}'>
+								<ul class="slides">
+									<li>
+										<img src="{{ asset('uploads/categories/2f3bb6fa20bec7ed94656a298504409a5440f0f5_1.JPEG') }}" class="animate" data-animation-options='{"animation":"fadeIn", "duration":"600"}'/>
+									</li>
+									<li>
+                                                                            <img src="{{ asset('uploads/categories/579ad278c0d8d0ae040cd8ca78ae55b33046dc8b (1).JPEG') }}" class="animate" data-animation-options='{"animation":"fadeIn", "duration":"600"}'/>
+									</li>
+									<li>
+										<img src="{{ asset('uploads/categories/9ab6656e8949997cba2aeaa6100148a9be59bdd8_1.JPEG') }}" class="animate" data-animation-options='{"animation":"fadeIn", "duration":"600"}'/>
+									</li>
+									
+									<li>
+										<img src="{{ asset('uploads/categories/e1a7fd1538c73fa0fd1abe347e02bb7716aeb842 (1).JPEG') }}" class="animate" data-animation-options='{"animation":"fadeIn", "duration":"600"}'/>
+									</li>
+									<li>
+										<img src="{{ asset('uploads/categories/39bcd8da7470cded8c93ed096af97aeb707d43c5_1.JPEG') }}" class="animate" data-animation-options='{"animation":"fadeIn", "duration":"600"}'/>
+									</li>
+                                                                        <li>
+										<img src="{{ asset('uploads/categories/teaching.jpg') }}" class="animate" data-animation-options='{"animation":"fadeIn", "duration":"600"}'/>
+									</li>
+                                                                         <li>
+										<img src="{{ asset('uploads/categories/driver.jpg') }}" class="animate" data-animation-options='{"animation":"fadeIn", "duration":"600"}'/>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="section-content">
+								<h2>Pourquoi Nous Choisir</h2>
+								<hr class="fade-right">
+								  <font color="black">
+								<p>Nous sommes déterminés à faire un ajout à la vie des personnes et pour cette raison nous avons gardé gratuitement pour les personnes qui affichent les tâches et les petits travaux dont ils ont besoin d'aide.</p>
+								<ul>
+								<li><b>	Il est logique de savoir combien les pros font payer pour votre tâche.</b>
+								</li><br>
+								<li>
+									<b> Recevez plusieurs devis sans être obligé.</b>
+								</li>
+								
+								<br>
+									<li>
+										<b>  Vos postes et personnels de détails ne resteront pas sur l'Internet plus que le temps que vous spécifiez.</b>
+									</li><br>
+									<li>
+										 <b> Vous n'êtes pas obligé de faire beaucoup d'appels et de discuter de votre tâche avec de nombreux avantages.</b>
+									</li><br>
+									
+								</ul></font>
+								<hr class="fade-right">
+								<a href="contact" class="btn btn-default"><i class="fa fa-info"></i> Savoir plus...</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end: PORTFOLIO CONTAINER -->
+			</section>
+				
+			
+		
+			<section class="wrapper" style="min-height:400px; background-image: url('{{ asset('front/images/photodune-4043508-3d-modern-office-room-l.jpg') }}')" data-stellar-background-ratio="0.8" data-stellar-vertical-offset="-750">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 class="center white"></h2>
+							<p class="center white">
+								Nous vous offrons un site
+							</p>
+						</div>
+					</div>
+					<div class="row animate-group">
+						<div class="col-sm-4">
+							<div class="icon-box animate" data-animation-options='{"animation":"flipInY", "duration":"600"}'>
+								<i class="icon-box-icon fa fa-pencil"></i>
+								<h3 class="icon-box-title">FIABLE</h3>
+								<div class="icon-box-content">
+									<p>
+										notre site apporte une image moderne et novatrice
+                                                                                <br><br><br>
+										
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="icon-box animate" data-animation-options='{"animation":"flipInY", "duration":"600"}'>
+								<i class="icon-box-icon fa fa-code"></i>
+								<h3 class="icon-box-title">RESPONSIVE</h3>
+								<div class="icon-box-content">
+									<p>
+										Notre site peut ètre consulté  par de nombreux outils différents, des ordinateurs aux smart phone en passant par les tablettes...
+										<br>
+										
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="icon-box animate" data-animation-options='{"animation":"flipInY", "duration":"600"}'>
+								<i class="icon-box-icon fa fa-bug"></i>
+								<h3 class="icon-box-title">UTILISABLE</h3>
+								<div class="icon-box-content">
+									<p>
+										Notre site est pratique, fonctionnel quelque soit les capacités de l'internaute, son équipement informatique, son mode de consultation...
+
+										<br>
+										
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="row">
+						<div class="col-md-12">
+							<div class="row">
+								<ul class="team-list">
+									<li class="col-md-6 col-sm-6">
+										<div class="thumbnail">
+											<img src="{{ asset('uploads/users/12472400_1559896044332785_7223823768768090435_n.jpg') }}" style="width: 400px;height: 400px;">
+											<span class="image-overlay" style="transition:null; opacity: 0;"><a href="https://www.facebook.com/profile.php?id=100009372123131" target="_blank"> <i class="tooltips fa fa-facebook circle-icon circle-small" style="transition:null; transform: rotate(0deg);" data-original-title="Facebook" data-placement="top"></i></a></span>
+										</div>
+										
+										<div align='center'>
+                                                                                    <h3>Sahnoun Sihem</h3>
+											Developpeur Web
+										</div>
+										
+									</li>
+									<li class="col-md-6 col-sm-6">
+										<div class="thumbnail">
+											<img src="{{ asset('uploads/users/IMG_20160430_172840.jpg') }}" style="width: 400px;height: 400px;">
+											<span class="image-overlay" style="transition:null; opacity: 0;"><a href="https://www.facebook.com/profile.php?id=100009297971637" target="_blank"><i class="tooltips fa fa-facebook circle-icon circle-small" style="transition:null; transform: rotate(0deg);" data-original-title="facebook" data-placement="top"></i></a></span>
+										</div>
+										
+										<div align='center'>
+                                                                                    <h3>Yahia Sarra</h3>
+											Developpeur Web
+										</div>
+										
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+		</div> 
+                        {% endblock %}

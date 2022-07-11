@@ -1,0 +1,17 @@
+
+            
+
+                    {% for categorie in categories %}
+                   
+                           
+                               <a href="{{ path('front_categorie',{'id':categorie.id}) }}">
+                                <div class="accordion-toggle collapsed" data-parent="#accordion">
+                                    <i class="icon-arrow"></i>
+                                    {{ categorie.nom }}
+                                    </div></a>
+                        {% endfor %}
+                        
+                   
+                        
+                  
+                   

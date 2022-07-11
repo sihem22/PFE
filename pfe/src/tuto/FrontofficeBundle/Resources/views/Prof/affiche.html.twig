@@ -1,0 +1,14 @@
+
+    {% if is_granted('ROLE_PROF') %}
+        {% if user.NomEntreprise==null %}
+            <a href="{{path('InformationCompte')}}">
+                Espace Professionnel
+            </a>
+        {%else%}
+            <a href="{{path('EspaceEntreprise')}}">
+                Espace Entreprise
+            </a>
+
+        {%endif%}
+    {%endif%}
+

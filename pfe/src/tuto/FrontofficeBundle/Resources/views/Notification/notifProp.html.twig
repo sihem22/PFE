@@ -1,0 +1,53 @@
+{% extends ":front:Front.html.twig" %}
+{% block title %}Liste Des Questions Reponses{% endblock  %}
+{% block body %}
+
+    <section class="wrapper" style="min-height: 400px; background-image: url(&quot;/pfe/web/font/images/photodune-4043508-3d-modern-office-room-l.jpg&quot;); background-position: 0px -143.517px;" data-stellar-background-ratio="0.8" data-stellar-vertical-offset="-750">
+        <div class="container">
+
+            <div class="row animate-group">
+                <div class="col-sm-12">
+                    <div class="icon-box animate" data-animation-options="{&quot;animation&quot;:&quot;flipInY&quot;, &quot;duration&quot;:&quot;600&quot;}" style="opacity: 1; animation-fill-mode: both; animation-duration: 1.2s; animation-delay: 0s; animation-name: flipInY;">
+                        <i class="icon-box-icon fa fa-pencil"></i>
+                        <h3 align="left" class="icon-box-title">
+                            Les réponses pour la proposition effectuée:</h3>
+                        <div class="icon-box-content">
+                            {% for proposition in proposition %}
+                                {% if proposition.user.path is  null %} 
+                                     
+                                        <img class="thumbnail" style="width: 50px;height: 50px;"  alt="" src="{{ asset('front/images/images (3)_1.jpg') }}"> 
+                                    {% else %}
+                                        <img class="thumbnail" style="width: 50px;height: 50px;"  src="{{ asset(proposition.user.assetPath)}}">
+                                    {%endif%}
+                                    <div align="left"> Vous avez une nouvelle proposition de la part de {{proposition.user}}  <br>
+
+
+
+                                    <font color="black"> <b>  Prix proposé:  {{proposition.prix}}DT<br>
+                                        Prix final proposé :   {{proposition.fprix}}DT<br>
+                                        Message  :   {{proposition.message}}</b> </font></div>
+
+                                <div align="right"> {% if proposition.etat=="Embauché"%}  
+                                    <button  class="btn btn-xs btn-green tooltips"  data-placement="top" >Embauché</button> </div>
+                                {%else%}
+
+                                <a href="{{path('embauche',{'id':proposition.id})}}"  class="btn btn-xs btn-bricky tooltips"  data-original-title="embaucher" data-placement="top" onclick="javascript:return(confirm('voulez-vous embaucher ce professionnel??'))">Embaucher</a> </div>
+                                {%endif%}
+                                    {% endfor %}
+
+
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </section>
+            {%endblock%}

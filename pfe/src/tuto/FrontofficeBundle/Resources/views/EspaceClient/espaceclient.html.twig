@@ -1,0 +1,116 @@
+{% extends ":front:Front.html.twig" %}
+{% block title %}Profil{% endblock  %}
+{% block body %}
+
+<section class="wrapper">
+    <div class="container">
+        <hr>
+        
+       {% include ':front:ProfilClient.html.twig' %}
+                    
+            <div class="col-md-6">
+                <h4>
+                    Information sur le compte</h4>
+                {{form_start(form,{'attr':{'id':'form2','role':'form'}})}}
+                <div class="horizontal-form margin-bottom-40">
+                    <div class="form-group">
+                        {{ form_row(form.NomEtPrenom,{'attr':{'placeholder':'Donner le nom '}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.email,{'attr':{'placeholder':'Donner l email '}})}}
+                    </div>
+                 <div class="form-group">
+                        
+                        
+
+                                
+
+
+                                
+    
+
+
+                                   
+                       <label for="file-upload" >
+                             {{ form_label(form.image) }}</label> 
+                                           <div class="custom-file-upload" id="file-upload">
+                                               {{ form_widget(form.image) }}</div>
+                                   </div>
+                                    <style>
+
+.custom-file-upload{
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+</style>
+
+
+                    <div class="form-group">
+                        {{ form_label(form.DateNaissance)}}
+                        <div class="input-append date" id="datetimepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy" >
+                            <span class="add-on">
+                                <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="icon-calendar">
+                                </i>
+                            </span>
+
+                            {{ form_widget(form.DateNaissance) }}
+
+
+                            <span class="add-on">
+
+                                <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="icon-calendar">
+                                </i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.Genre) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.Telephone,{'attr':{'placeholder':'Donner le telephone d utlisateur'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.SiteWeb,{'attr':{'placeholder':'Donner le site d utlisateur'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.Localite) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_rest(form) }}
+                    </div>
+                    <style>
+                        .required:after { content:" *";
+                                          color:red; }
+                        </style>
+                        <a href="#myModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Modifier Un Utilisateur</a>
+
+                    <!-- Modal HTML -->
+                    <div id="myModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Confirmation</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Voulez vous enregistrer les modifications?</p>
+                                    <p class="text-warning"><small>Si vous n'enregistrez pas ,vos modifications seront perdues.</small></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">NON</button>
+                                    <button class="demo btn btn-blue" data-toggle="modal" >OUI</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+</section>
+
+    {%endblock%}
+

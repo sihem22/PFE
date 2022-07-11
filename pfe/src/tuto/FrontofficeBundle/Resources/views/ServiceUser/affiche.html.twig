@@ -1,0 +1,35 @@
+{% extends ":front:Front.html.twig" %}
+{% block title %}Listes Des services{% endblock  %}
+{% block body %}
+    <section class="wrapper" style="min-height: 400px; background-image: url(&quot;/pfe/web/font/images/photodune-4043508-3d-modern-office-room-l.jpg&quot;); background-position: 0px -143.517px;" data-stellar-background-ratio="0.8" data-stellar-vertical-offset="-750">
+        <div class="container">
+          {% include ':front:profil.html.twig' %}
+            <div class="col-md-8">
+            <div class="row animate-group">
+                <div class="col-sm-12">
+                    <div class="icon-box animate" data-animation-options="{&quot;animation&quot;:&quot;flipInY&quot;, &quot;duration&quot;:&quot;600&quot;}" style="opacity: 1; animation-fill-mode: both; animation-duration: 1.2s; animation-delay: 0s; animation-name: flipInY;">
+                        <i class="icon-box-icon fa fa-pencil"></i>
+                        <h3 align="left" class="icon-box-title">
+                            Les services que vous avez choisit sont :</h3>
+                        <div class="icon-box-content">
+                                {% for service in user.services %}
+                                    {{service.nom}} <br>
+                                {% endfor %}
+                                <div class="row">
+                                     <div class="row">
+                                <div class="col-sm-3">
+                                    <a href="{{  path('serviceuser') }}">    <button  class="btn btn-bricky btn-lg"  >Ajouter des compétences</button> </a>
+                                </div></div></div>
+                        </div>
+            
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+
+    </section>
+{%endblock%}

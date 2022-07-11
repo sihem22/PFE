@@ -1,0 +1,46 @@
+{% extends ":front:Front.html.twig" %}
+
+{% block title %}{{categorie.nom}} {% endblock  %}
+{% block body %}
+
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panel-group accordion-custom accordion-teal" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {{ render (controller('FrontofficeBundle:Categorie1:NomCategorie')) }}
+                        </div>
+                        
+                    </div>
+                     
+                    
+                    
+                
+                    
+                   
+                        
+                </div>   
+                    </div>
+                    
+        
+                       <div class="row">
+           <div class="col-md-8">
+                <div class="grid-container animate-group" data-animation-interval="100">
+
+                     {% for service in categorie.Service %}
+                        <div class="col-md-3 col-sm-6">
+                            <div class="grid-item animate">
+                                <a href="{{path('front_questionnaire',{'id':service.id})}}">
+                                    <div class="grid-image">
+                                        <img style="width: 256px;height: 166px;"  src="{{ asset(service.assetPath)}}"  class="img-responsive"/>  
+                                        <span class="image-overlay"> <i class="fa fa-mail-forward circle-icon circle-main-color"></i> </span>
+                                    </div>
+                                    <div class="grid-content" title="{{service.nom}}">
+                                        <font color="blue">    <b>  {% if service.nom|length >10 %} {{service.nom|slice(0,10) }}...{%else%} {{service}}{%endif%} </b></font>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>{% endfor %} </div></div></div></div></div> {%endblock%}

@@ -1,0 +1,168 @@
+{% extends ":back:base.html.twig" %}
+{% block title %}TypeAbonnement{% endblock  %}
+{% block body %}
+ <div class="container">
+        <div class="row">
+           <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="clip-home-2"></i>
+                         <a href="{{path('frontoffice_homepage')}}">
+                            Front Office
+                        </a>
+                    </li>
+                    <li class="active">
+                        <i><b>  Back Office </b> </i>
+                    </li>
+                    
+                </ol>
+            </div>
+        </div>
+        </div>        <br>
+        
+        <br>
+                                <div class="row">
+            <div class="col-md-12">
+                <!-- start: FORM VALIDATION 1 PANEL -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-external-link-square"></i>
+                        Ajouter un TypeAbonnement
+                        <div class="panel-tools">
+                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                            </a>
+                            <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="btn btn-xs btn-link panel-refresh" href="#">
+                                <i class="fa fa-refresh"></i>
+                            </a>
+                            <a class="btn btn-xs btn-link panel-expand" href="#">
+                                <i class="fa fa-resize-full"></i>
+                            </a>
+                            <a class="btn btn-xs btn-link panel-close" href="#">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+
+                        {{form_start(form,{'attr':{'id':'form2','role':'form'}})}}
+                        <style>
+                                    .required:after { content:" *";
+                                                      color:red; }
+                                    </style>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="errorHandler alert alert-danger no-display">
+                                    <i class="fa fa-times-sign"></i> Vous avez des erreurs , S'il vous plaît vérifier ci-dessous
+                                </div>
+                                <div class="successHandler alert alert-success no-display">
+                                    <i class="fa fa-ok"></i> Votre validation de formulaire est réussie!
+                                </div>
+                            </div>
+      
+                        </div>
+             <div class="row">
+                 <div class="col-md-8">
+                     {{ form_row(form.codeTypeAbonnement,{'attr':{'placeholder':'Donner le code typeAbonnement'}}) }}
+                 </div>
+                 </div>
+                 <br>
+                 <div class="row">
+                 <div class="col-md-8">
+                     {{ form_row(form.libelle,{'attr':{'placeholder':'Donner la libelle de typeAbonnement'}}) }}
+                 </div>
+                 </div>
+                 <br>
+                 <div class="row">
+                 <div class="col-md-8">
+                     {{ form_row(form.duree,{'attr':{'placeholder':'Donner la durée de typeAbonnement'}}) }}
+                 </div>
+                 </div>
+                 <br>
+                 <div class="row">
+                 <div class="col-md-8">
+                     {{ form_row(form.prix,{'attr':{'placeholder':'Donner la prix du typeAbonnement'}}) }}
+                 </div>
+                 </div>
+                 <br>
+                 <div class="row">
+                 <div class="col-md-8">
+                     {{ form_row(form.description,{'attr':{'placeholder':'Donner la libelle de la categorie'}}) }}
+                 </div>
+                 </div>
+                 
+             {{form_rest(form)}}
+             <br>
+          <button data-style="expand-left" class="btn btn-teal ladda-button">
+            <span class="ladda-label"> Ajouter un TypeAbonnement </span>
+            <i class="fa fa-arrow-circle-left"></i>
+            <span class="ladda-spinner"></span>
+        </button>
+    </div>
+             {{ form_end(form) }}
+         </div>
+     </div>
+ </div>
+                      
+        <div class="row">
+            <div class="col-md-3">
+
+                <button  disabled="disabled" class="btn btn-warning btn-sm faa-flash animated" type="button"> <font color="red"><i class="fa fa-warning"></i></font>
+
+                    <font color="black">  champ obligatoire </font> <font color="red">* </font>
+                </button>
+
+            </div>
+        </div>
+ </div>
+ {% endblock %}
+                   {# <table class="table table-striped">
+<form method='POST'>
+     <table class="table table-striped">
+    <a href="{{path('tuto_TypeAbonnement')}}">Liste Des TypesAbonnements</a>
+
+  
+    <head> 
+        
+    <tr>
+        <td>{{form_label(form.codeTypeAbonnement)}} </td>
+        <td>{{form_widget(form.codeTypeAbonnement)}}
+            {{form_errors(form.codeTypeAbonnement)}}
+        </td>
+    </tr>
+    <tr>
+        <td>{{form_label(form.libelle)}} </td>
+        <td>{{form_widget(form.libelle)}}
+            {{form_errors(form.libelle)}}
+        </td>
+    </tr>
+    <tr>
+        <td>{{form_label(form.duree)}} </td>
+        <td>{{form_widget(form.duree)}}
+            {{form_errors(form.duree)}}
+        </td>
+    </tr>
+    <tr>
+        <td>{{form_label(form.prix)}} </td>
+        <td>{{form_widget(form.prix)}}
+            {{form_errors(form.prix)}}
+        </td>
+    </tr>
+    <tr>
+        <td>{{form_label(form.description)}} </td>
+        <td>{{form_widget(form.description)}}
+            {{form_errors(form.description)}}
+        </td>
+    </tr>
+     </table>
+        {{form_rest(form)}}
+        <input type='submit' Value='Ajouter un TypeAbonnement' class="btn btn-primary">
+</form>
+         {% endblock  %}#}
+
+

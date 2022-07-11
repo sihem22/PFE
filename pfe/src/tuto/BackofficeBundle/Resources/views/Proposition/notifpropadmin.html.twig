@@ -1,0 +1,4 @@
+{% for proposition in propositions|reverse %}
+<a href="{{ path('tuto_proposition') }}"><i class="clip-notification-2"></i>Vous avez une proposition en attente de validation<br>
+La date de la proposition  :{{proposition.dateModif|date('d/m/Y')}} 
+{% endfor %}

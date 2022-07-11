@@ -1,0 +1,46 @@
+<li><a href="{{ path('notification_affiche') }}"> afficher tout  </a></li>
+    {% for notification in notifications %}
+
+    {% if is_granted('ROLE_PROF') %}
+        {% if notification.proposition== null %}
+            <li> <a href="{{ path('front_questionnaireSucces',{'id':notification.demande.id ,'notifId':notification.id}) }}">  
+                    {% if notification.demande.user.path is null  %}
+                        <img class="thumbnail" style="width: 40px;height: 40px;"  alt="" src="{{ asset('front/images/images (4)_1.jpg') }}">
+                    {% else %}
+                        <img class="thumbnail" style="width: 40px;height: 40px;"  src="{{ asset(notification.demande.user.assetPath)}}"> 
+
+                    {%endif%}
+                     <b><font color="black"> Vous avez une nouvelle demande de la part de {{notification.demande.user}}!!!</font></b> <br>
+                    Gouvernorat: {{notification.demande.user.localite.delegation.gouvernorat}} , Delegation:{{notification.demande.user.localite.delegation}} , Localite: {{notification.demande.user.localite}}<br>
+                    Le service qu'il/elle a besoin :{{notification.demande.service}}</a></li>
+                {%endif%} {%endif%}
+                {% if notification.proposition!=null %}
+                    {% if notification.proposition.etat.id!="9"%}
+
+                        <li>   <a href="{{ path('front_repProposition',{'demande':notification.demande.id ,'id':notification.proposition.id,'notifId':notification.id}) }}">
+                                    {% if notification.proposition.user.path is  null %} 
+                                        <img class="thumbnail" style="width: 30px;height: 30px;"  alt="" src="{{ asset('front/images/images (3)_1.jpg') }}"> 
+                                    {% else %}
+                                        <img class="thumbnail" style="width: 40px;height: 40px;"  src="{{ asset(notification.proposition.user.assetPath)}}">
+                                    {%endif%}
+                                <font color="black"> <b>  Vous avez une nouvelle proposition de la part de {{notification.proposition.user}}!!!</b> </font>   <br>
+                                Gouvernorat: {{notification.proposition.user.localite.delegation.gouvernorat}} , Delegation: {{notification.proposition.user.localite.delegation}} , Localite:{{notification.proposition.user.localite}}</a> </li>
+
+                            {%endif%} {%endif%}
+
+                        {% if notification.proposition!=null %}
+                        {% if notification.proposition.etat.id=="9"%}
+
+                            <li>  <a href="{{ path('coordonnee',{'id':notification.demande.id,'notifId':notification.id}) }}"> {% if notification.demande.user.path is null %}
+                                <img class="thumbnail" style="width: 40px;height: 40px;"  alt="" src="{{ asset('front/images/images (4)_1.jpg') }}">{% else %}
+
+                                <img class="thumbnail" style="width: 40px;height: 40px;" src="{{ asset(notification.demande.user.assetPath)}}"> {%endif%}
+
+                               <font color="black">   <b>  le/la client(e) {{notification.demande.user}} vous a embauché avec succés!!! </b></font> <br>si vous voulez le contacter cliquez ici <br>pour voir ses coordonnés </a> </li>
+                        {%endif%} {%endif%}
+
+                        {% endfor %}
+
+
+
+

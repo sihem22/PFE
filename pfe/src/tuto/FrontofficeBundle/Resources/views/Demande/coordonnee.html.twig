@@ -1,0 +1,43 @@
+{% extends ":front:Front.html.twig" %}
+
+{% block title %}information sur le client{% endblock  %}
+{% block body %}
+
+    <section class="wrapper">
+        <div class="container">
+
+            <div class="col-md-12">
+                <div class="row animate-group">
+                    <div class="col-md-offset-2 col-md-8 col-sm-12">
+                        <div class="icon-box animate" data-animation-options="{&quot;animation&quot;:&quot;flipInY&quot;, &quot;duration&quot;:&quot;600&quot;}" style="opacity: 1; animation-fill-mode: both; animation-duration: 1.2s; animation-delay: 0s; animation-name: flipInY;">
+                            <i class="icon-box-icon fa fa-pencil"></i>
+                            <h3 class="icon-box-title">
+                                tout ce que vous voulez pour savoir sur le client</h3>
+                            <div class="icon-box-content"> 
+                                {% for user in users %}
+
+                                    <font color="black"><b> Nom du client:</b></font> {{ user.NomEtPrenom}}<br>
+                                    <font color="black"><b> Genre:</b></font> {{user.Genre}}<br>
+                                    <font color="black"><b>  Emplacement :</b></font> Gouvernorat: {{user.Localite.Delegation.Gouvernorat}} ,  Delegation: {{user.Localite.Delegation}} , Localite: {{user.Localite}}<br>
+                                    <font color="black"><b>  Date Naissance :</b></font> {{user.DateNaissance|date('d/m/Y')}}<br>
+                                    <font color="black"><b>  Téléphone:</b></font> {{user.Telephone}}<br>
+                                    <font color="black"><b>  Site web:</b></font> {{user.SiteWeb}}<br>
+                                    <font color="black"><b>  Adresse email:</b></font> {{user.email}}<br>
+
+                                {%endfor%}
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+    </section>
+{%endblock%}
+
+

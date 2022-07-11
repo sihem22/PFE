@@ -1,0 +1,64 @@
+<?php
+
+namespace tuto\BackofficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * localites
+ *
+ * @ORM\Table(name="localites")
+ * @ORM\Entity(repositoryClass="tuto\BackofficeBundle\Repository\localitesRepository")
+ */
+class localites
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $libelle;
+     /**
+     * @ORM\ManyToOne(targetEntity="tuto\BackofficeBundle\Entity\Delegation", inversedBy="localites")
+     * @ORM\JoinColumn(name="Delegation_id", referencedColumnName="id")
+     */
+   
+    protected $Delegation;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set libelle
+     *
+     * @param string $libelle
+     * @return localites
+     */
+    public function setLibelle($libelle)
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    /**
+     * Get libelle
+     *
+     * @return string 
+     */
+    public function getLibelle()
+    {
+        return $this->libelle;
+    }
+}

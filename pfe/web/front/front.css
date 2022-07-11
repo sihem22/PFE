@@ -1,0 +1,40 @@
+.navbar > .container .navbar-brand {
+    padding: 0 10px 0;
+    margin-left: 0;
+    font-family: 'Bookman Old Style',serif;
+    font-size: 30px;
+    line-height: inherit;
+    color: #ABA3A3;}
+sub {
+    left: -0.7em;
+    bottom: -0.6em; 
+}
+.navbar > .container .navbar-brand {
+   
+    color: #B34F6B;}
+sup {
+    left: -2.5em;
+   bottom: -6em;
+}
+.slide_subtitle {
+    background-color: #A9496C;}
+ h3 {
+    font-family: 'Open Sans';
+    color: #C36D9D;
+}
+label {
+    font-size: 12px;
+    float: left;
+}
+a {
+    color: #AF4E4C;
+}
+.circle-icon {
+    background-color: #A9496C;
+    
+        margin-top: -35px;}
+body {
+    color: #0C0C0C;
+    direction: ltr;
+    font-family: 'Open+Sans', sans-serif;
+    font-size: 13px;}

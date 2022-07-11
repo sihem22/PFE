@@ -1,0 +1,140 @@
+<div role="navigation" class="navbar navbar-default navbar-fixed-top space-top">
+
+    <!-- start: TOP NAVIGATION CONTAINER -->
+    <div class="container">
+        <div class="navbar-header">
+            <!-- start: RESPONSIVE MENU TOGGLER -->
+            <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- end: RESPONSIVE MENU TOGGLER -->
+            <!-- start: LOGO -->
+            <a class="navbar-brand" href="{{path('frontoffice_homepage')}}">
+                <img style="width: 150px;height: 80px;"  alt="" src="{{ asset('front/images/image.PNG') }}"><b><sub>mallJ<img style="width: 18px;height:25px;"  alt="" src="{{ asset('front/images/i.jpg') }}">bsMall</sub></b>
+            </a>
+            <!-- end: LOGO -->
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{path('frontoffice_homepage')}}">
+
+                        Accueil
+
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">   Catégories
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        {{ render (controller('FrontofficeBundle:Categorie1:showCategoriesMenu')) }}
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{path('front_contact')}}">
+
+                        Contactez-nous
+
+                    </a>
+                </li>
+
+                {% if is_granted('ROLE_USER') %} 
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li>
+                            <a href="{{path('tuto_dashbroad')}}">
+                                Administration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{path('espaceadmin')}}">
+                                Espace Admin
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown"> <span class="badge"> {{ render (controller('FrontofficeBundle:Notification:count')) }} </span>  Notification
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                {{ render (controller('FrontofficeBundle:Notification:notification',{id:app.request.get('id')})) }} 
+
+                            </ul>
+                        </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_PROF') %}
+                        <li>
+                             {{ render (controller('FrontofficeBundle:Prof:users')) }} 
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown"> <span class="badge"> {{ render (controller('FrontofficeBundle:Notification:count')) }} </span>  Notification
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                {{ render (controller('FrontofficeBundle:Notification:notification',{id:app.request.get('id')})) }} 
+                                
+                                
+
+
+
+                            </ul>
+                        </li>
+
+                    {% endif %}
+                    {% if is_granted('ROLE_CLIENT') %}
+                        <li>
+                            <a href="{{path('espaceclient')}}">
+                                Espace client
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                             <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown"> <span class="badge"> {{ render (controller('FrontofficeBundle:Notification:count')) }} </span>  Notification
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                {{ render (controller('FrontofficeBundle:Notification:notification',{id:app.request.get('id')})) }} 
+
+                            </ul>
+                        </li>
+
+                    {% endif %}
+                   
+
+
+
+                    <li>
+                        <a href="{{path('fos_user_security_logout')}}">
+                            
+                                {{ app.user|title }} - Déconnexion 
+                        </a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{path('fos_user_security_login')}}">
+
+                            Se connecter
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{path('sign_up')}}">
+
+                            S'inscrire
+
+                        </a>
+                    </li>
+                {% endif %}
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+    <!-- end: TOP NAVIGATION CONTAINER -->

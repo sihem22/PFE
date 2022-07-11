@@ -1,0 +1,40 @@
+{% extends ":front:Front.html.twig" %}
+{% block title %}Create an account{% endblock  %}
+{% block body %}
+
+    <section class="wrapper" style="min-height: 400px;">
+        <div class="container">
+       
+            <p>Si vous avez un compte avec nous , s'il vous plaît <a href="{{path('fos_user_security_login')}}">Connectez-vous </a>.</p>
+            <div class="row animate-group">
+                <div class="col-sm-12">
+                    <div class="icon-box animate" data-animation-options="{&quot;animation&quot;:&quot;flipInY&quot;, &quot;duration&quot;:&quot;600&quot;}" style="opacity: 1; animation-fill-mode: both; animation-duration: 1.2s; animation-delay: 0s; animation-name: flipInY;">
+                        <i class="icon-box-icon fa fa-pencil"></i>
+                        <h3 class="icon-box-title"><img style="width: 150px;height: 80px;"  alt="" src="{{ asset('front/images/images (8).jpg') }}"> <br>
+                            <br>  <b>  Pour les professionnels indépendants<br>et les entreprises </b></h3>
+                        <div class="icon-box-content">
+
+
+
+                            <p style="text-align: center;">
+                                <strong>  Vous voulez augmenter votre revenu ? </strong>
+                            </p>
+                            <p style="text-align: center;">
+
+
+
+                                <br> 1- Créer un compte d'entreprise et ajouter des compétences .<br>
+
+                                <br>   2- Envoyer propositions .<br>
+
+                                <br>   3- Terminez la tâche et obtenir de l'argent ... <br>
+                                
+                                <br> <a href="{{path('front_compteprof')}}" class="btn btn-default pull-right">je suis un travailleur indépendant</a>
+                                <a href="{{path('front_user_ajout')}}" class="btn btn-default pull-left"> j'ai une entreprise</a> <br>
+                            </p>
+                            
+
+                        </div>
+                    </div>
+                </div> </div></div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% for categorie in categories %}
+<li data-transition="slide" data-slotamount="7" data-masterspeed="1500" >
+							<img  src="{{ asset(categorie.assetPath)}}"  style="background-color:rgb(246, 246, 246)" alt="slidebg1"  data-bgfit="cover" data-bgposition="left bottom" data-bgrepeat="no-repeat">
+							<div class="caption lft slide_title slide_item_left"
+							data-x="0"
+							data-y="105"
+							data-speed="400"
+							data-start="1500"
+							data-easing="easeOutExpo">
+                                                            <font color="white">{{categorie.nom}}</font>
+							</div>
+							
+							<div class="caption lfl slide_subtitle slide_item_left"
+							data-x="0"
+							data-y="180"
+							data-speed="400"
+							data-start="2000"
+							data-easing="easeOutExpo">
+                                                            <font color="white">  <i>{{categorie.description}}</i></font>
+							</div>
+                                                       
+							<a class="caption lft btn btn-red slide_btn slide_item_right" href="{{ path('front_categorie',{'id':categorie.id}) }}"
+							data-x="0"
+							data-y="320"
+							data-speed="400"
+							data-start="3000"
+							data-easing="easeOutExpo">
+								Cliquez Ici !
+							</a>
+							
+						</li>
+{%endfor%}

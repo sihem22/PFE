@@ -1,0 +1,13 @@
+<html>
+    <head> 
+        <title>mail</title>
+    </head>
+    <body>
+        <form action="{{path('tuto_sendmail')}}" method="post">
+       sujet :<input type="text" size="50" name="Subject"/><br/><br/><br/>
+       email :<input type="text" size="50" name="email"/><br/><br/><br/>
+       text :<input type="text" size="50" name="message"/><br/><br/><br/>
+       <input type="submit" value="envoyer"/>
+        </form>
+    </body>
+</html>

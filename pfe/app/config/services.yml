@@ -1,0 +1,24 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+   fos_user.doctrine_registry:
+        alias: doctrine
+services:
+    app.form.registration:
+        class: tuto\BackofficeBundle\Form\RegistrationType
+        tags:
+            - { NomEtPrenom: form.type, alias: app_user_registration }
+            - { DateNaissance: form.type, alias: app_user_registration }
+            - { Genre: form.type, alias: app_user_registration }
+            - { Telephone: form.type, alias: app_user_registration }
+            - { Image: form.type, alias: app_user_registration }
+            - { SiteWeb: form.type, alias: app_user_registration }
+            - { A_propos: form.type, alias: app_user_registration }
+            - { IsConfirmed: form.type, alias: app_user_registration }
+            - { AnneeExperience: form.type, alias: app_user_registration }

@@ -1,0 +1,45 @@
+ {% extends ":front:Front.html.twig" %}
+{% block title %}Proposition{% endblock  %}
+{% block body %}
+<section class="wrapper padding50">
+ <div class="container">
+{{form_start(form,{'attr':{'id':'form2','role':'form'}})}}
+                         <style>
+                                    .required:after { content:" *";
+                                                      color:red; }
+                                    </style>
+
+  
+                                    <div class="row">
+                          <div class="col-md-9">          
+                       
+                                <br>
+                           
+                            
+                            <div class="row">
+                            <div class="col-md-9">
+                                {{ form_row(form.prix, { 'label': 'Prix' ,'attr':{'placeholder':'Saisir le prix souhaité '}}) }}
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-9">
+                                {{ form_row(form.fprix ,{ 'label': 'Prix final' ,'attr':{'placeholder':'Saisir le prix final souhaité '}}) }}
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-9">
+                                {{ form_row(form.message) }}
+                            </div>
+                            </div>
+                              <div class="row">
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-bricky btn-lg">Enregistrer</button> <font color="red"> champ obligatoire* </font>
+                                </div></div>
+                          
+                           
+                            
+                            
+ </div> 
+                           </section>
+                    {{ form_end(form) }}
+               {%endblock%}

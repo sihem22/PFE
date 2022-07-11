@@ -1,0 +1,118 @@
+{% extends ":back:base.html.twig" %}
+{% block title %}Proposition{% endblock  %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+           <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="clip-home-2"></i>
+                         <a href="{{path('frontoffice_homepage')}}">
+                            Front Office
+                        </a>
+                    </li>
+                    <li class="active">
+                        <i><b>  Back Office </b> </i>
+                    </li>
+                    
+                </ol>
+            </div>
+        </div>
+        </div>
+        {% for label, flashes in app.session.flashbag.all %}
+            {% for flash in flashes %}
+                <div class="alert alert-success">
+                    <button class="close" data-dismiss="alert">
+                        ×
+                    </button>
+                    <i class="fa fa-check-circle"></i>
+                    <strong>{{ label|title }} !!!</strong> :  {{ flash }}
+
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- start: DYNAMIC TABLE PANEL -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-external-link-square"></i>
+                        Liste des Propositions
+                        <div class="panel-tools">
+                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#"> </a>
+                            <a class="btn btn-xs btn-link panel-expand" href="#"> <i class="fa fa-resize-full"></i> </a>
+
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+                            <thead>
+                                <tr>
+                                    <th class="center">DateProposition</th>
+
+
+                                    <th class="center">Prix</th>
+                                    <th class="center">Fprix</th>
+                                    <th class="center">Message</th>
+
+                                    <th class="center">DateModif</th>
+
+                                    <th class="center">User</th>
+                                    <th class="center">Demande</th>
+                                    <th class="center">Etat</th>
+                                    <th class="center">Action</th>
+
+
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for proposition in propositions %}
+                                    <tr>
+
+                                        <td class="center">{{proposition.dateProposition|date('d/m/Y')}}</td>
+
+
+                                        <td class="center"> {{proposition.prix}} </td>
+                                        <td class="center"> {{proposition.fprix}} </td>
+                                        <td class="center"> {{proposition.message}} </td>
+
+
+                                        <td class="center"> {{proposition.dateModif|date('d/m/Y')}} </td>
+                                        <td class="center"> {{proposition.user}} </td>
+                                        <td class="center"> {{proposition.demande.id}} </td>
+                                        <td class="center">  
+                                            {% if proposition.etat == "Validé" %}
+                                                <button type="button" class="btn btn-success btn-xs"> {{proposition.etat}} </button> {% endif %} 
+                                                {% if proposition.etat == "Rejeté" %}
+                                                    <button type="button" class="btn btn-danger btn-xs"> {{proposition.etat}} </button> {% endif %} 
+                                                    {% if proposition.etat == "En attente" %}
+                                                        <button type="button" class="btn btn-warning btn-xs"> {{proposition.etat}} </button> {% endif %}
+                                                        {% if proposition.etat == "Expiré" %}
+                                                            <button type="button" class="btn btn-beige btn-xs"> {{proposition.etat}} </button> {% endif %} 
+                                                            {% if proposition.etat == "Embauché" %}
+                                                                <button type="button" class="btn btn-blue btn-xs"> {{proposition.etat}} </button> {% endif %} </td>
+                                                            <td class="center"> 
+                                                             {% if proposition.etat == "En attente" %}
+                                                             <a href="{{path('tuto_proposition_modif',{'id':proposition.id})}}" class="btn btn-xs btn-teal tooltips"  data-original-title="Valider" data-placement="top">Valider</a> 
+                                                              {%else%} {% if proposition.etat  == "Validé" %}
+                                                                  <button class="btn btn-xs btn-teal tooltips" >déja validé</button>{%endif%} {%endif%} </td>
+
+                                                        </tr>
+                                                        {%endfor%}
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- end: DYNAMIC TABLE PANEL -->
+                                        </div>
+                                    </div>
+                                                        </div>
+                                    {% endblock  %}

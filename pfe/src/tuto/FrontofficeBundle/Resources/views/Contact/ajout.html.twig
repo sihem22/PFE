@@ -1,0 +1,74 @@
+ {% extends ":front:Front.html.twig" %}
+{% block title %}Contactez-nous{% endblock  %}
+{% block body %}
+<section class="wrapper padding50">
+ <div class="container">
+{{form_start(form,{'attr':{'id':'form2','role':'form'}})}}
+                         <style>
+                                    .required:after { content:" *";
+                                                      color:red; }
+                                    </style>
+
+                        <div class="row" style="margin-top: 15px">
+    <div class="col-md-6">
+        {% for label, flashes in app.session.flashbag.all %}
+            {% for flash in flashes %}
+                <div class="alert alert-{{label}}">
+                    <button class="close" data-dismiss="alert">×</button>
+                    <strong>{{ label|title }} !!!</strong> :  {{ flash }}
+
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+                                    <div class="row">
+                          <div class="col-md-9">          
+                        <div class="row">
+                            <div class="col-md-9">
+                                
+                                    {{ form_row(form.nom,{'attr':{'placeholder':'Donnez votre nom  '}}) }}
+                                </div>
+                            </div>
+                                <br>
+                            <div class="row">
+                            <div class="col-md-9">
+                                {{ form_row(form.email,{'attr':{'placeholder':'Donnez votre email  '}}) }}
+                            </div>
+                        </div>
+                            <div class="row">
+                            <div class="col-md-9">
+                                {{ form_row(form.telephone,{'attr':{'placeholder':'Donnez votre telephone  '}}) }}
+                            </div>
+                        </div>
+                            <div class="row">
+                            <div class="col-md-9">
+                                {{ form_row(form.commentaire,{'attr':{'placeholder':'Donnez votre commentaire  '}}) }}
+                            </div>
+                            </div>
+                            <button class="btn btn-main-color" type="submit" >Envoyer</button></div>
+                             <div class="row">
+                                 <div class="col-md-3">
+                                     <h2><b>Contactez-nous</b></h2>
+                        <address class="margin-bottom-40">
+                            <h3>   ADRESSE : </h3>
+                            <br>
+                            Technopole Mannouba 3ème étage, bureau N°4
+                            <br>
+                            <h3>  GSM : </h3> +216 23 390 007 <br>
+                            <h3> GSM : </h3>+216 58 341 886 
+                            <br>
+                            <h3>  Email: </h3>
+                            <a href=" https://www.outlook.com">
+                               direction@octasoft.com.tn 
+                            </a>
+                        </address>
+                    </div>
+                             </div></div>
+                            <hr>
+                            <div id="map" style="height:400px;width:1200px"></div>
+ 
+ </div> 
+                           </section>
+                    {{ form_end(form) }}
+               {%endblock%}

@@ -1,0 +1,102 @@
+frontoffice_homepage:
+    path:     /
+    defaults: { _controller: FrontofficeBundle:Default:index }
+    
+front_categorie_1:
+    path: /scolarité
+    defaults: {_controller: FrontofficeBundle:Categorie1:categorie1}
+    
+front_compteprof:
+    path: /prof
+    defaults: {_controller: FrontofficeBundle:Prof:ajout }
+front_contact:
+    path: /contact
+    defaults: {_controller: FrontofficeBundle:Contact:ajout }
+    
+front_categorie:
+    path: /categorie/{id}
+    defaults: {_controller: FrontofficeBundle:Categorie1:details }
+front_categories:
+    path: /categories
+    defaults: {_controller: FrontofficeBundle:Categorie:categorie }
+front_signupprof:
+    path: /SignUpProf
+    defaults: {_controller: FrontofficeBundle:SignUp:SignUpProf}
+front_questionnaire:
+    path: /questionnaire/{id}
+    defaults: {_controller: FrontofficeBundle:Questionnaire:quest }
+
+sign_up:
+    path: /SignUp
+    defaults: {_controller: FrontofficeBundle:SignUp:signup }
+map:
+    path: /contact us
+    defaults: {_controller: FrontofficeBundle:Map:map }
+InformationCompte:
+    path: /espaceprof
+    defaults: {_controller: FrontofficeBundle:InformationCompte:modifier }
+espaceclient:
+    path: /espaceclient
+    defaults: {_controller: FrontofficeBundle:EspaceClient:modifier }
+espaceadmin:
+    path: /espaceadmin
+    defaults: {_controller: FrontofficeBundle:EspaceClient:espaceadmin }
+serviceuser:
+    path: /serviceuser
+    defaults: {_controller: FrontofficeBundle:ServiceUser:serviceuser }
+serviceuser_affiche:
+    path: /serviceuser/affiche
+    defaults: {_controller: FrontofficeBundle:ServiceUser:affiche }
+front_questionnaireSucces:
+    path: /questionnaire_succes/{id}/{notifId}
+    defaults: {_controller: FrontofficeBundle:Questionnaire:succes }
+front_reponsesSucces:
+    path: /questionnaire_succes/{demande}
+    defaults: {_controller: FrontofficeBundle:Questionnaire:reponses }
+
+front_user_ajout:
+    path:   /registerentreprise
+    defaults: { _controller: FrontofficeBundle:User2:ajout2 }
+front_client_ajout:
+    path:   /compteclient
+    defaults: { _controller: FrontofficeBundle:Client:ajout }
+front_faq:
+    path:   /faq
+    defaults: { _controller: FrontofficeBundle:FAQ:faq }
+EspaceEntreprise:
+    path:   /EspaceEntreprise
+    defaults: { _controller: FrontofficeBundle:Entreprise:modifier }
+notification:
+    path:   /notification/{id}
+    defaults: { _controller: FrontofficeBundle:Notification:notification, id:null }
+notification_affiche:
+    path:   /notifaffiche
+    defaults: { _controller: FrontofficeBundle:Notification:affiche }
+notification_affiche1:
+    path:   /notifaffiche1
+    defaults: { _controller: FrontofficeBundle:Notification:affiche1 }
+proposition_ajout:
+    path:   /propajout/{id}
+    defaults: { _controller: FrontofficeBundle:Proposition:proposition }  
+    
+categories_profil:
+    path:   /categorieprofil
+    defaults: { _controller: FrontofficeBundle:Categorie:categorieprofil }
+proposition_reponses:
+    path:   /proporeponses/{demande}/{id}
+    defaults: { _controller: FrontofficeBundle:Proposition:reponses }
+front_repProposition:
+    path: /proporeponses/{demande}/{id}/{notifId}
+    defaults: {_controller: FrontofficeBundle:Proposition:reponsesprop }
+notifProp_affiche:
+    path:   /notifPropaffiche
+    defaults: { _controller: FrontofficeBundle:Notification:afficheProp }
+notification_affiche_tout:
+    path:   /afficheToutProp
+    defaults: { _controller: FrontofficeBundle:Notification:afficheToutProp }
+embauche:
+    path:   /embauche/{id}
+    defaults: { _controller: FrontofficeBundle:Proposition:embauche }
+coordonnee:
+    path:   /coordonnee/{id}/{notifId}
+    defaults: { _controller: FrontofficeBundle:Notification:coordonnee }

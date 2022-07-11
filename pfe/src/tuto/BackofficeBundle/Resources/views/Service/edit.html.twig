@@ -1,0 +1,140 @@
+{% extends ":back:base.html.twig" %}
+{% block title %} Service{% endblock  %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+           <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="clip-home-2"></i>
+                         <a href="{{path('frontoffice_homepage')}}">
+                            Front Office
+                        </a>
+                    </li>
+                    <li class="active">
+                        <i><b>  Back Office </b> </i>
+                    </li>
+                    
+                </ol>
+            </div>
+        </div>
+        </div>
+         <br>
+        
+        <br>
+                                <div class="row">
+            <div class="col-md-12">
+                <!-- start: FORM VALIDATION 1 PANEL -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-external-link-square"></i>
+                        Ajouter un Service 
+                        <div class="panel-tools">
+                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                            </a>
+                            <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="btn btn-xs btn-link panel-refresh" href="#">
+                                <i class="fa fa-refresh"></i>
+                            </a>
+                            <a class="btn btn-xs btn-link panel-expand" href="#">
+                                <i class="fa fa-resize-full"></i>
+                            </a>
+                            <a class="btn btn-xs btn-link panel-close" href="#">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                 
+
+                        {{form_start(form,{'attr':{'id':'form2','role':'form'}})}}
+                        <style>
+                                    .required:after { content:" *";
+                                                      color:red; }
+                                    </style>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="errorHandler alert alert-danger no-display">
+                                    <i class="fa fa-times-sign"></i> Vous avez des erreurs , S'il vous plaît vérifier ci-dessous
+                                </div>
+                                <div class="successHandler alert alert-success no-display">
+                                    <i class="fa fa-ok"></i> Votre validation de formulaire est réussie!
+                                </div>
+                            </div>
+      
+                        </div>
+        <div class="row">
+            <div class="col-md-8">
+                {{ form_row(form.nom,{'attr':{'placeholder':'Donner la libelle du service'}})}}
+            </div>
+        </div>
+            <br>
+        <div class="row">
+            <div class="col-md-8">
+                {{ form_row(form.description,{'attr':{'placeholder':'Donner la description du service'}}) }}
+            </div>
+        </div>
+            <br>
+        <div class="row">
+
+            <div class="col-md-8">
+                {{ form_label(form.image)}}
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="input-group">
+                        <div class="form-control uneditable-input">
+                            <i class="fa fa-file fileupload-exists"></i>
+                            <span class="fileupload-preview"></span>
+                        </div>
+
+                        {{ form_errors(form.image) }}
+
+
+                        <div class="input-group-btn">
+                            <div class="btn btn-light-grey btn-file">
+                                <span class="fileupload-new"><i class="fa fa-folder-open-o"></i> Select file</span>
+                                <span class="fileupload-exists"><i class="fa fa-folder-open-o"></i> Change</span>
+                                {{ form_widget(form.image) }}
+                            </div>
+                            <a href="#" class="btn btn-light-grey fileupload-exists" data-dismiss="fileupload">
+                                <i class="fa fa-times"></i> Remove
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+                            <br>
+        <div class="row">
+            <div class="col-md-8">
+                {{ form_row(form.Categorie) }}
+            </div>
+        </div>
+        {{form_rest(form)}}
+        <br>
+        <button data-style="expand-left" class="btn btn-teal ladda-button">
+            <span class="ladda-label"> Ajouter un Service</span>
+            <i class="fa fa-arrow-circle-left"></i>
+            <span class="ladda-spinner"></span>
+        </button>  <font color="red"><i class="fa fa-warning faa-flash animated"></i> 
+
+                      champ obligatoire * </font>
+    </div>
+    {{ form_end(form) }}
+
+</div>
+            </div>
+                                </div>
+                  
+        
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends ":front:Front.html.twig" %}
+{% block title %}Profile{% endblock  %}
+{% block body %}
+    <section class="wrapper">
+    <div class="container">
+        <hr>
+          {% if is_granted('ROLE_PROF') %}
+        {% include ':front:profil.html.twig' %}
+        {%else%}
+         {% include ':front:ProfilClient.html.twig' %}
+            {%endif%}  
+            <div class="col-md-6">
+                
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show"> {% include ":back:alert.html.twig" %}
+    
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    {% if user.NomEntreprise!=null %}
+    <p>Nom D'entreprise: {{ user.NomEntreprise }}</p>{%endif%}
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+    <p>Genre: {{ user.Genre }}</p>
+    <p>Site Web: {{ user.SiteWeb }}</p>
+    <p>Téléphone: {{ user.Telephone }}</p>
+     <p>Emplacement: Gouvernorat: {{ user.Localite.Delegation.Gouvernorat }} , Delegation: {{ user.Localite.Delegation }} , Localite: {{ user.Localite}}</p>
+</div></div></div> </section>
+{%endblock %}

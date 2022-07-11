@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.4 Author: ClipTheme -->
+<!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+    <!--<![endif]-->
+    <!-- start: HEAD -->
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <!-- start: META -->
+        <meta charset="utf-8" />
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- end: META -->
+        <!-- start: MAIN CSS -->
+        <link rel="stylesheet" href="{{ asset('back/plugins/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/font-awesome/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/fonts/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/css/main-responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/iCheck/skins/all.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/perfect-scrollbar/src/perfect-scrollbar.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/css/theme_light.css') }}" type="text/css" id="skin_color">
+        <link rel="stylesheet" href="{{ asset('back/css/print.css') }}" type="text/css" media="print"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('back/plugins/select2/select2.css') }}" />
+        <link rel="stylesheet" href="{{ asset('back/plugins/DataTables/media/css/DT_bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('back/plugins/ladda-bootstrap/dist/ladda-themeless.min.css') }}">
+        <link rel="stylesheet" href="{{asset('back/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/bootstrap-datetimepicker/css/datetimepicker.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/iCheck/skins/square/red.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/font-awesome-animation-master/dist/font-awesome-animation.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('back/plugins/iCheck/skins/square/red.css') }}">
+       
+        <!--[if IE 7]-->
+        <link rel="stylesheet" href="{{ asset('back/plugins/font-awesome/css/font-awesome-ie7.min.css') }}">
+        <![endif]-->
+        <!-- end: MAIN CSS -->
+        <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+        <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="{{ asset('back/job.css') }}" media="all" />
+        <link rel="stylesheet" href="{{ asset('back/lock.css') }}" media="all" />
+    </head>
+ 
+
+<body class="lock-screen">
+		<div class="main-ls">
+			<div class="logo">
+				Small Jobs Mall
+			</div>
+			<div class="box-ls">
+				<img  src="{{ asset('back/images/noavatar.png') }}" style="height: 100px" >
+				<div class="user-info">
+					<h1><i class="fa fa-lock"></i> {{ app.user }}</h1>
+					
+					<span><em>Entrer votre mot de passe pour deverouiller.</em></span>
+                                         {% trans_default_domain 'FOSUserBundle' %}
+
+                {% block fos_user_content %}
+                    
+                    <div class="errorHandler alert alert-danger no-display">
+                        <i class="fa fa-remove-sign"></i> You have some form errors. Please check below.
+                    </div>
+					<form action="{{path('tuto_dashbroad')}}" method="post">
+					{#<div class="errorHandler alert alert-danger no-display">
+                        <i class="fa fa-remove-sign"></i> You have some form errors. Please check below.
+                    </div>#}
+						<div class="form-group">
+                                    <label for="password"  value="{{ 'security.login.password'|trans }}">Mot de Passe </label>
+                                     
+                                    <span class="input-icon">
+                                        <i class="fa fa-lock"></i>
+                                        <input type="password" class="form-control password" id="password"  placeholder="Password" name="_password" required="required">
+                                       
+                                    </span>
+                            </div>
+						 <div class="form-actions">
+                                
+
+                                <button type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}"  class="btn btn-bricky pull-right">
+                                   Connexion <i class="fa fa-arrow-circle-right"></i>
+
+                                </button>
+
+					</form>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="copyright">
+				2014 &copy; clip-one by cliptheme.
+			</div>
+	</div>
+
+	
+
+	{% endblock fos_user_content %}	
+</body>
+</html>
+

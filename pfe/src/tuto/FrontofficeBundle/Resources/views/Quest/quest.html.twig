@@ -1,0 +1,104 @@
+{% extends ":front:Front.html.twig" %}
+{% block title %}Questionnaire{% endblock  %}
+{% block body %}
+
+
+
+
+    <section class="wrapper" style="min-height: 400px; background-image: url(&quot;/pfe/web/font/images/photodune-4043508-3d-modern-office-room-l.jpg&quot;); background-position: 0px -143.517px;" data-stellar-background-ratio="0.8" data-stellar-vertical-offset="-750">
+        <div class="container">
+
+            <div class="row animate-group">
+                <div class="col-sm-12">
+                    <div class="icon-box animate" data-animation-options="{&quot;animation&quot;:&quot;flipInY&quot;, &quot;duration&quot;:&quot;600&quot;}" style="opacity: 1; animation-fill-mode: both; animation-duration: 1.2s; animation-delay: 0s; animation-name: flipInY;">
+                        <i class="icon-box-icon fa fa-pencil"></i>
+                        <h3 align="left" class="icon-box-title">
+                            Poster une demande:</h3>
+                        <div class="icon-box-content">
+                            <p>
+                            <div class="row">
+                                <form method="post">
+                                   
+
+
+                                    {% for questionService in service.questionservices %}
+                                        {% set name="question_"~loop.index %}
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h5><b>{{ questionService.question.libelle}} <span class="symbol required"></span></b></h5>
+                                                        {% if questionService.question.TypeQuestion ==  "radiobox" %} 
+
+
+                                                    {% for ValeursDefault in questionService.question.ValeursDefault %}
+                                                        <div><font align="center"> <label></font><input required type="radio"  value="{{ValeursDefault.libelle }}" name="{{ name }}" />{{ ValeursDefault.libelle }}</label></div>
+
+                                                    {% endfor %}
+                                                {% endif %}
+                                                {% if questionService.question.TypeQuestion ==  "checkbox" %}
+
+                                                    {% for ValeursDefault in questionService.question.ValeursDefault %}
+                                                        <div><font align="center"><label></font>
+                                                                <input type="checkbox"  value="{{ValeursDefault.libelle }}" name="{{ name }}[]"  />{{ ValeursDefault.libelle }}</div>
+                                                            {% endfor %}
+                                                {% endif %}
+                                                        {% if questionService.question.TypeQuestion ==  "select" %}
+                                                    <div class="col-sm-12">
+                                                        <select class='form-control' id='form-field-select-1' name ="{{ name }}">
+
+
+                                                            {% for ValeursDefault in questionService.question.ValeursDefault %}
+                                                                <option  value="{{ValeursDefault.libelle }}">{{ValeursDefault.libelle }}</option>
+                                                            {% endfor %}
+                                                        </select></div>
+                                                    {% endif %}
+                                                    {% if questionService.question.TypeQuestion ==  "text" %}
+
+
+                                                    <div class="col-sm-12">
+                                                        <input class="form-control" id="form-field-1" type="text" placeholder="{{ questionService.question.libelle}}" name="{{ name }}"/>
+                                                    </div>
+
+                                                {% endif %}
+                                                {% if questionService.question.TypeQuestion ==  "number" %}
+                                                    <div class="col-sm-12"><label><input type="number" required  name="{{ name }}" style="width: 650px;" class="form-control"/></label></div>
+
+                                                {% endif %}
+                                                {% if questionService.question.TypeQuestion ==  "textarea" %}
+                                                    <div class="col-sm-12">
+
+                                                        <textarea required name="{{ name }}" class="autosize form-control" id="form-field-24" placeholder="{{ questionService.question.libelle}}" style="height: 69px; overflow: hidden; -ms-overflow-y: hidden; -ms-word-wrap: break-word; resize: horizontal;"></textarea>
+                                                    </div>
+                                                {% endif %}
+                                                {% if questionService.question.TypeQuestion ==  "datePicker" %}
+                                                    <div class="col-md-12"><input type="date" required name="{{ name }}" class="form-control"></div>
+                                                    {% endif %}
+                                                    {% if questionService.question.TypeQuestion ==  "timePicker" %}
+                                                    <div class="col-sm-12"><input type="time" required name="{{ name }}" class="form-control"> </div>
+                                                    {% endif %}
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                    {% endfor %}
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <button class="btn btn-bricky btn-lg" type="submit">
+                                                Enregistrer
+                                            </button> <font color="red"> champ obligatoire <span class="symbol required"></span> </font></div></div>
+                                </form>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </section>
+{% endblock %}

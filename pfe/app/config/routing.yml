@@ -1,0 +1,13 @@
+frontoffice:
+    resource: "@FrontofficeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tuto_backoffice:
+    resource: "@tutoBackofficeBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+
+

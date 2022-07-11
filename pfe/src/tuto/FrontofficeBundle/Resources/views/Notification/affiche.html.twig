@@ -1,0 +1,82 @@
+{% extends ":front:Front.html.twig" %}
+
+{% block title %}Notification{% endblock  %}
+{% block body %}
+
+    <section class="wrapper" style="min-height: 400px; background-image: url(&quot;/pfe/web/font/images/photodune-4043508-3d-modern-office-room-l.jpg&quot;); background-position: 0px -143.517px;" data-stellar-background-ratio="0.8" data-stellar-vertical-offset="-750">
+        <div class="container">
+            <hr>
+
+            <div class="col-md-8">
+                <div class="row animate-group">
+                    <div class="col-md-offset-2 col-md-12 col-sm-12">
+                        <div class="icon-box animate" data-animation-options="{&quot;animation&quot;:&quot;flipInY&quot;, &quot;duration&quot;:&quot;600&quot;}" style="opacity: 1; animation-fill-mode: both; animation-duration: 1.2s; animation-delay: 0s; animation-name: flipInY;">
+                            <i class="icon-box-icon fa fa-pencil"></i>
+                            <h3 align="left" class="icon-box-title">
+                                Toutes les notifications:</h3>
+                            <div class="icon-box-content">  
+                                <div class="row">
+                                    {% for notification in notifications %}
+                                        <div class="col-md-6 col-sm-12">
+                                            {% if is_granted('ROLE_PROF') %}
+                                                {% if notification.proposition== null %}
+                                                    
+                                                        {% if notification.demande.user.path is null  %}
+                                                            <img class="thumbnail" style="width: 40px;height: 40px;"  alt="" src="{{ asset('front/images/images (4)_1.jpg') }}">
+                                                        {% else %}
+                                                            <img class="thumbnail" style="width: 40px;height: 40px;"  src="{{ asset(notification.demande.user.assetPath)}}"> 
+
+                                                        {%endif%}
+                                                        <div align="left"> <b><font color="black"> Vous avez une nouvelle demande de la part de {{notification.demande.user}}!!!</font></b> <br>
+                                                                Gouvernorat: {{notification.demande.user.localite.delegation.gouvernorat}} , Delegation:{{notification.demande.user.localite.delegation}} , Localite: {{notification.demande.user.localite}}<br>
+                                                            Le service qu'il/elle a besoin :{{notification.demande.service}}<br>
+                                                            Date du demande :{{notification.demande.dateDemande|date('d/m/Y')}} </div><br>
+                                                            <div class="right"><a href="{{ path('front_reponsesSucces',{'demande':notification.demande.id}) }}">  cliquez ici </a></div>
+                                                   
+                                                            
+                                                        {%endif%} {%endif%}
+
+                                                {% if notification.proposition!=null %}
+                                                    {% if notification.proposition.etat.id!="9"%}
+
+                                                        
+                                                            {% if notification.proposition.user.path is  null %} 
+                                                                <img class="thumbnail" style="width: 40px;height: 40px;"  alt="" src="{{ asset('front/images/images (3)_1.jpg') }}"> 
+                                                            {% else %}
+                                                                <img class="thumbnail" style="width: 40px;height: 40px;"  src="{{ asset(notification.proposition.user.assetPath)}}">
+                                                            {%endif%}
+                                                            <div align="left"> <font color="black"> <b>  Vous avez une nouvelle proposition de la part de {{notification.proposition.user}}!!!</b> </font> <br>
+                                                               Gouvernorat: {{notification.proposition.user.localite.delegation.gouvernorat}} , Delegation: {{notification.proposition.user.localite.delegation}} , Localite:{{notification.proposition.user.localite}} 
+                                                               Date du proposition :{{notification.proposition.dateProposition|date('d/m/Y')}} </div> <br><br><br>
+                                                                <div class="right"><a href="{{ path('front_repProposition',{'demande':notification.demande.id ,'id':notification.proposition.id,'notifId':notification.id}) }}"> cliquez ici</a> </div>
+                                                            {%endif%} {%endif%} 
+
+                                                    {% if is_granted('ROLE_PROF') %}
+                                                        {% if notification.proposition!=null %}
+                                                            {% if notification.proposition.etat.id=="9"%}
+
+                                                                 {% if notification.demande.user.path is null %}
+                                                                    <img class="thumbnail" style="width: 40px;height: 40px;"  alt="" src="{{ asset('front/images/images (4)_1.jpg') }}">{% else %}
+
+                                                                    <img class="thumbnail" style="width: 40px;height: 40px;" src="{{ asset(notification.demande.user.assetPath)}}"> {%endif%}
+
+                                                                    <div align="left"> <font color="black">   <b>  le/la client(e) {{notification.demande.user}} vous a embauché avec succés!!! </b></font> <br> <br>vous pouvez consulter le détail <br>en cliquant ci-dessous  <br>
+                                                                        Date du proposition :{{notification.proposition.dateProposition|date('d/m/Y')}}</div> <br>
+                                                                        <div class="right"><a href="{{ path('coordonnee',{'id':notification.demande.id,'notifId':notification.id}) }}">cliquez ici </a> </div>
+                                                        {%endif%} {%endif%}{%endif%}<br> </div>
+
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+
+            {% endblock %}
